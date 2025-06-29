@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Llave
+  - Collar
+  - Bosque
+  - Enemigo
+  - Personaje
   layers:
   - Default
   - TransparentFX
