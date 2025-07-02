@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SpawnerBruja2 : MonoBehaviour
 {
     public GameObject enemyPrefab; 
     public Transform spawnPoint;
-    public float spawnInterval = 3f;
+    public float spawnMinInterval = 10f;
+    public float spawnMaxInterval = 15f;
+    private float spawnInterval;
     public float detectionRadius = 1f; // para coomprobar colisiones con "Bosque"
     public int poolSize = 10; // cantidad e enemigos
 
     private List<GameObject> enemyPool;
+    private void Awake()
+    {
+        spawnInterval = 7f;
+    }
 
     void Start()
     {
@@ -22,6 +29,7 @@ public class SpawnerBruja2 : MonoBehaviour
             enemy.SetActive(false);
             enemyPool.Add(enemy);
         }
+        //InvokeRepeating("SpawnEnemy", 5f, Random.Range(spawnMinInterval, spawnMaxInterval));
 
         InvokeRepeating("SpawnEnemy", 5f, spawnInterval);
     }
@@ -30,13 +38,16 @@ public class SpawnerBruja2 : MonoBehaviour
     {
         if (enemyPrefab != null && spawnPoint != null)
         {
+            spawnInterval = Random.Range(spawnMinInterval, spawnMaxInterval);
+            Debug.Log(spawnInterval);
             // comprobar posicion de spawner NO overlap con "bosque"
             Collider2D[] colliders = Physics2D.OverlapCircleAll(spawnPoint.position, detectionRadius);
             foreach (Collider2D col in colliders)
             {
                 if (col.CompareTag("Bosque"))
                 {
-                Debug.Log("no se puede instanciar sobre bosque");
+                //Debug.Log("no se puede instanciar sobre bosque");
+                
                 StartCoroutine(RetrySpawn());
                 return;
                 }
