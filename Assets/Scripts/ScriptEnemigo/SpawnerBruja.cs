@@ -78,7 +78,7 @@ public class SpawnerBruja2 : MonoBehaviour
                 }
             }
 
-            Debug.Log("Enemigos ON");
+            //Debug.Log("Enemigos ON");
         }
     }
 
