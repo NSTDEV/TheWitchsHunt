@@ -12,11 +12,12 @@ public class GlobanEfectoSonido : MonoBehaviour
 
     private static bool globalReady = true;  // ⬅ NUEVO: compartido entre todos
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (!globalReady) return;                        // ⬅ NUEVO: todos comparten esto
-        if (!other.CompareTag("Player")) return;
-        if (clips.Length == 0) return;
+        if (other.CompareTag("Personaje")) {
+            
+            if (clips.Length == 0) return;
 
         AudioClip elegido = clips[Random.Range(0, clips.Length)];
 
@@ -31,6 +32,7 @@ public class GlobanEfectoSonido : MonoBehaviour
         }
 
         StartCoroutine(GlobalCooldown());               // ⬅ NUEVO
+         };
     }
 
     private System.Collections.IEnumerator GlobalCooldown()
