@@ -35,8 +35,8 @@ using UnityEngine.AI;
 public class EnemyControllerAI : MonoBehaviour
 {
     [SerializeField] private string targetTag = "Personaje";
-     private Animator animator;  
-
+    private Animator animator;
+    private SpriteRenderer sr;
     private Transform target;
     private NavMeshAgent agent;
 
@@ -48,6 +48,7 @@ public class EnemyControllerAI : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
@@ -64,8 +65,9 @@ public class EnemyControllerAI : MonoBehaviour
 
     void Update()
     {
-         Vector2 origin = transform.position;
-            Vector2 direction = ((Vector2)target.position - origin).normalized;
+        Vector2 origin = transform.position;
+        Vector2 direction = ((Vector2)target.position - origin).normalized;
+
         if (target != null)
         {
             agent.SetDestination(target.position);
@@ -75,15 +77,7 @@ public class EnemyControllerAI : MonoBehaviour
             animator.SetBool("EnemigoMoviendoLado", true);
             animator.SetBool("EnemigoMoviendoArriba", false);
             animator.SetBool("EnemigoMoviendoAbajo", false);
-
-            // Flip X si camina a la izquierda
-           /* Vector3 scale = transform.localScale;
-            scale.x = direction.x > 0 ? 1 : -1;
-            transform.localScale = scale;*/
-            // Flip X según la dirección, respetando la escala original
-Vector3 scale = transform.localScale;
-scale.x = Mathf.Abs(scale.x) * (direction.x >= 0 ? 1 : -1);
-transform.localScale = scale;
+        sr.flipX = direction.x < 0;
         }
         else if (direction.y > 0)
         {
