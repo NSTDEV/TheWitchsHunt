@@ -34,7 +34,7 @@ using UnityEngine.AI;
 
 public class EnemyControllerAI : MonoBehaviour
 {
-    [SerializeField] private string targetTag = "Personaje"; // Asegúrate de que el objeto tenga esta etiqueta
+    [SerializeField] private string targetTag = "Personaje";
      private Animator animator;  
 
     private Transform target;
