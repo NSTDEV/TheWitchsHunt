@@ -1,42 +1,59 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
+
 public class ControlCollares : MonoBehaviour
 {
     public int maxCollares = 10;
     public int collaresActuales = 0;
     public TextMeshProUGUI textoUI;
-   public void RecogerCollar()
-{
-    if (collaresActuales < maxCollares)
-    {
-        collaresActuales++;
-        ActualizarTexto();
-    }
-}
 
-void Update()
-{
-    if (Input.GetKeyDown(KeyCode.J) && collaresActuales > 0)
+    public void RecogerCollar()
     {
-        GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
-        foreach (GameObject enemigo in enemigos)
+        if (collaresActuales < maxCollares)
         {
-            if (enemigo.activeInHierarchy)
+            collaresActuales++;
+            ActualizarTexto();
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J) && collaresActuales > 0)
+        {
+            GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
+            foreach (GameObject enemigo in enemigos)
             {
-                enemigo.SetActive(false);
-                collaresActuales--;
-                ActualizarTexto();
-                break;
+                if (enemigo.activeInHierarchy)
+                {
+                    collaresActuales--;
+                    ActualizarTexto();
+
+
+                    StartCoroutine(Blink(enemigo));
+                    break;
+                }
             }
         }
     }
-}
 
-void ActualizarTexto()
-{
-    if (textoUI != null)
+    IEnumerator Blink(GameObject enemigo)
     {
-        textoUI.text = " : " + collaresActuales;
+        Animator anim = enemigo.GetComponent<Animator>();
+        if (anim != null)
+        {
+            anim.Play("EnemigoGolpeado");
+        }
+        
+        yield return new WaitForSeconds(1f);
+        enemigo.SetActive(false);
     }
-}
+
+    void ActualizarTexto()
+    {
+        if (textoUI != null)
+        {
+            textoUI.text = " : " + collaresActuales;
+        }
+    }
 }

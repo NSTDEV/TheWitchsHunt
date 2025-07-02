@@ -306,37 +306,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372944673}
   m_CullTransparentMesh: 1
---- !u!1 &392007529
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 392007530}
-  m_Layer: 0
-  m_Name: Objects
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &392007530
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392007529}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.25579, y: -0.24021758, z: 0.15394318}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &453185202
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668832837}
   m_Layer: 0
-  m_Name: Dialogues
+  m_Name: DIALOGUES
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -873,7 +842,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1645816780489345873, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 6.297428
+      value: 7.8938723
       objectReference: {fileID: 0}
     - target: {fileID: 2614839453609176334, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: m_Name
@@ -924,6 +893,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
+--- !u!1 &1109021762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1109021763}
+  m_Layer: 0
+  m_Name: CINEMATICS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1109021763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109021762}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.0861635, y: 8.757224, z: -0.19223675}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1163783446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1970,9 +1970,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1077003128}
-  - {fileID: 1242755871}
   - {fileID: 1280836992}
-  - {fileID: 392007530}
   - {fileID: 465027468}
   - {fileID: 8465434893371381400}
   - {fileID: 2077661147}
@@ -1980,3 +1978,5 @@ SceneRoots:
   - {fileID: 1232966019159107839}
   - {fileID: 172131225}
   - {fileID: 668832837}
+  - {fileID: 1109021763}
+  - {fileID: 1242755871}
