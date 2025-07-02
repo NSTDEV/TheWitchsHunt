@@ -257118,6 +257118,7 @@ GameObject:
   - component: {fileID: 6909100753716064956}
   - component: {fileID: 3241884938240163312}
   - component: {fileID: 2100866616728494788}
+  - component: {fileID: 8958968983104068966}
   m_Layer: 3
   m_Name: Forest collision
   m_TagString: Untagged
@@ -312308,6 +312309,22 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &8958968983104068966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5367446763537477803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5678216268760126369
 GameObject:
   m_ObjectHideFlags: 0
@@ -312367,6 +312384,7 @@ GameObject:
   - component: {fileID: 8087330626098127185}
   - component: {fileID: 6629331698856038019}
   - component: {fileID: 6907354050296059562}
+  - component: {fileID: 8753949876106305380}
   m_Layer: 0
   m_Name: Structures
   m_TagString: Untagged
@@ -314370,6 +314388,22 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &8753949876106305380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6355855482540961403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6534667177330924061
 GameObject:
   m_ObjectHideFlags: 0
