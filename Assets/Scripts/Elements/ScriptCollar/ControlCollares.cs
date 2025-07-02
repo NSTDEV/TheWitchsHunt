@@ -36,7 +36,7 @@ void ActualizarTexto()
 {
     if (textoUI != null)
     {
-        textoUI.text = "Collares: " + collaresActuales;
+        textoUI.text = " : " + collaresActuales;
     }
 }
 }
