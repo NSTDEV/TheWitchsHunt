@@ -11,8 +11,8 @@ public class LlavePickup : MonoBehaviour
             {
                 control.RecogerLlave();
             }
-
-            gameObject.SetActive(false); // desaparecer la llave
+            Destroy(gameObject);
+            //gameObject.SetActive(false); // desaparecer la llave
         }
     }
 }
