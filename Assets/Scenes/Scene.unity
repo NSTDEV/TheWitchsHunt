@@ -98753,7 +98753,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.009229898, y: -0.06460971}
@@ -361141,7 +361141,7 @@ Tilemap:
       - {fileID: 713447935, guid: 263f095135aed67428030710516d4c84, type: 3}
       - {fileID: -100832029, guid: 263f095135aed67428030710516d4c84, type: 3}
       - {fileID: -1413782879, guid: 263f095135aed67428030710516d4c84, type: 3}
-      m_AnimationSpeed: 6.3940325
+      m_AnimationSpeed: 7.740784
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 37, y: -1, z: 0}
@@ -361151,7 +361151,7 @@ Tilemap:
       - {fileID: 713447935, guid: 263f095135aed67428030710516d4c84, type: 3}
       - {fileID: -100832029, guid: 263f095135aed67428030710516d4c84, type: 3}
       - {fileID: -1413782879, guid: 263f095135aed67428030710516d4c84, type: 3}
-      m_AnimationSpeed: 7.3222685
+      m_AnimationSpeed: 7.4877005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 34, y: 1, z: 0}
@@ -361161,7 +361161,7 @@ Tilemap:
       - {fileID: 713447935, guid: 263f095135aed67428030710516d4c84, type: 3}
       - {fileID: -100832029, guid: 263f095135aed67428030710516d4c84, type: 3}
       - {fileID: -1413782879, guid: 263f095135aed67428030710516d4c84, type: 3}
-      m_AnimationSpeed: 6.769371
+      m_AnimationSpeed: 6.6705747
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 37, y: 1, z: 0}
@@ -361171,7 +361171,7 @@ Tilemap:
       - {fileID: 713447935, guid: 263f095135aed67428030710516d4c84, type: 3}
       - {fileID: -100832029, guid: 263f095135aed67428030710516d4c84, type: 3}
       - {fileID: -1413782879, guid: 263f095135aed67428030710516d4c84, type: 3}
-      m_AnimationSpeed: 6.7132826
+      m_AnimationSpeed: 7.025644
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -361782,7 +361782,7 @@ Tilemap:
       - {fileID: 713447935, guid: 263f095135aed67428030710516d4c84, type: 3}
       - {fileID: -100832029, guid: 263f095135aed67428030710516d4c84, type: 3}
       - {fileID: -1413782879, guid: 263f095135aed67428030710516d4c84, type: 3}
-      m_AnimationSpeed: 7.851957
+      m_AnimationSpeed: 6.975199
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
