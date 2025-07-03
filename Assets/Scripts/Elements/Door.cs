@@ -64,9 +64,9 @@ public class Door : MonoBehaviour
             dialoguePanel.SetActive(false);
             //dialogueMark.SetActive(true);
             Time.timeScale = 1.0f;
-            // Aquí puedes hacer una animación, desactivar la puerta o cargar otra escena
+            // Aquï¿½ puedes hacer una animaciï¿½n, desactivar la puerta o cargar otra escena
             // Por ejemplo:
-            // SceneManager.LoadScene("NivelGanado");
+            SceneManager.LoadScene("EscenaWin");
         }
     }
 
@@ -94,7 +94,7 @@ public class Door : MonoBehaviour
             if (other.GetComponent<ControlLlaves>().llavesActuales >= 3)
             {
                 StartDialogue();
-                Debug.Log("¡Puerta abierta! Has escapado.");
+                Debug.Log("ï¿½Puerta abierta! Has escapado.");
             }
             else
             {
