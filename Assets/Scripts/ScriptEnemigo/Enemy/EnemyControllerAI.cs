@@ -35,6 +35,7 @@ using UnityEngine.AI;
 public class EnemyControllerAI : MonoBehaviour
 {
     [SerializeField] private string targetTag = "Personaje";
+    [SerializeField] private float witchSpeed = 3f;
     private Animator animator;
     private SpriteRenderer sr;
     private Transform target;
@@ -43,6 +44,7 @@ public class EnemyControllerAI : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = witchSpeed;
     }
 
     private void Start()
