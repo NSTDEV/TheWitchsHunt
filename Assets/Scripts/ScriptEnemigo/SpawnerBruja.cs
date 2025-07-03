@@ -16,7 +16,7 @@ public class SpawnerBruja2 : MonoBehaviour
     private List<GameObject> enemyPool;
     private void Awake()
     {
-        spawnInterval = 7f;
+        spawnInterval = 15f;
     }
 
     void Start()
@@ -71,7 +71,7 @@ public class SpawnerBruja2 : MonoBehaviour
                 {
                     //enemy.transform.position = spawnPoint.position;
                     
-                    enemy.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, 0f);
+                    enemy.transform.position = new Vector2(spawnPoint.position.x, spawnPoint.position.y);
                     enemy.transform.rotation = spawnPoint.rotation;
                     enemy.SetActive(true);
                     return;
@@ -86,12 +86,6 @@ public class SpawnerBruja2 : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        // cambia posicion de spawner para evitar "bosque"
-        spawnPoint.position += new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), 0f);
-        //spawnPoint.position += new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
-        
-
-        // se intentar instanciar (o reactivar) de nuevo
         SpawnEnemy();
     }
 }
