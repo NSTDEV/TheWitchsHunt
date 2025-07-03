@@ -24,7 +24,7 @@ public class ControlLlaves : MonoBehaviour
         {
             llavesActuales++;
             ActualizarTexto();
-            Debug.Log("Llaves Total: " + llavesActuales);
+            Debug.Log(" " + llavesActuales);
         }
         else
         {
@@ -36,7 +36,7 @@ public class ControlLlaves : MonoBehaviour
     {
         if (textoLlavesUI != null)
         {
-            textoLlavesUI.text = "Llaves: " + llavesActuales;
+            textoLlavesUI.text = " : " + llavesActuales;
         }
     }
 }
