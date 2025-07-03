@@ -7,8 +7,8 @@ public class SpawnerBruja2 : MonoBehaviour
 {
     public GameObject enemyPrefab; 
     public Transform spawnPoint;
-    public float spawnMinInterval = 10f;
-    public float spawnMaxInterval = 15f;
+    public float spawnMinInterval = 20f;
+    public float spawnMaxInterval = 30f;
     private float spawnInterval;
     public float detectionRadius = 1f; // para coomprobar colisiones con "Bosque"
     public int poolSize = 10; // cantidad e enemigos
