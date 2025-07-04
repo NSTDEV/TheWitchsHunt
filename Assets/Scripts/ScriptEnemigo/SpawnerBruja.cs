@@ -36,7 +36,7 @@ public class SpawnerBruja2 : MonoBehaviour
 
     void SpawnEnemy()
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(true);//activa el spawner
 
         if (enemyPrefab != null && spawnPoint != null)
         {
