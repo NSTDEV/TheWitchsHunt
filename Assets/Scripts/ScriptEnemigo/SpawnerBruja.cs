@@ -31,13 +31,16 @@ public class SpawnerBruja2 : MonoBehaviour
         }
         //InvokeRepeating("SpawnEnemy", 5f, Random.Range(spawnMinInterval, spawnMaxInterval));
 
-        InvokeRepeating("SpawnEnemy", 5f, spawnInterval);
+        InvokeRepeating("SpawnEnemy", 30f, spawnInterval);
     }
 
     void SpawnEnemy()
     {
+        gameObject.SetActive(true);
+
         if (enemyPrefab != null && spawnPoint != null)
         {
+
             spawnInterval = Random.Range(spawnMinInterval, spawnMaxInterval);
             Debug.Log(spawnInterval);
             // comprobar posicion de spawner NO overlap con "bosque"
@@ -46,10 +49,10 @@ public class SpawnerBruja2 : MonoBehaviour
             {
                 if (col.CompareTag("Bosque"))
                 {
-                //Debug.Log("no se puede instanciar sobre bosque");
-                
-                StartCoroutine(RetrySpawn());
-                return;
+                    //Debug.Log("no se puede instanciar sobre bosque");
+
+                    StartCoroutine(RetrySpawn());
+                    return;
                 }
             }
 
@@ -70,9 +73,10 @@ public class SpawnerBruja2 : MonoBehaviour
                 if (!enemy.activeInHierarchy)
                 {
                     //enemy.transform.position = spawnPoint.position;
-                    
+
                     enemy.transform.position = new Vector2(spawnPoint.position.x, spawnPoint.position.y);
                     enemy.transform.rotation = spawnPoint.rotation;
+
                     enemy.SetActive(true);
                     return;
                 }
