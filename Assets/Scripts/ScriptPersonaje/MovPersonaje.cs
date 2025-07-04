@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class MovPersonaje : MonoBehaviour
 {
@@ -125,4 +126,15 @@ public class MovPersonaje : MonoBehaviour
         isFacingRight = !isFacingRight;
     }
 
+      // --- Detectar colisión físicamente (colliders NO en trigger) ---
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemigo"))
+        {
+            SceneManager.LoadScene("EscenaLose");
+        }
+    }
 }
+
+
+
