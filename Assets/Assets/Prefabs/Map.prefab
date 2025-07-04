@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9026834107257510978}
   - component: {fileID: 7445062154620646749}
   - component: {fileID: 6000755221947327986}
+  - component: {fileID: 2403739141252417423}
   m_Layer: 0
   m_Name: Outside Forest
   m_TagString: Untagged
@@ -64629,6 +64630,22 @@ TilemapRenderer:
   m_Mode: 1
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &2403739141252417423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835032457473265356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2614839453609176334
 GameObject:
   m_ObjectHideFlags: 0
@@ -257126,7 +257143,6 @@ GameObject:
   - component: {fileID: 6909100753716064956}
   - component: {fileID: 3241884938240163312}
   - component: {fileID: 2100866616728494788}
-  - component: {fileID: 8958968983104068966}
   m_Layer: 3
   m_Name: Forest collision
   m_TagString: Untagged
@@ -312317,22 +312333,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!114 &8958968983104068966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5367446763537477803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!1 &5678216268760126369
 GameObject:
   m_ObjectHideFlags: 0
@@ -314469,7 +314469,7 @@ Tilemap:
       - {fileID: 713447935, guid: 263f095135aed67428030710516d4c84, type: 3}
       - {fileID: -100832029, guid: 263f095135aed67428030710516d4c84, type: 3}
       - {fileID: -1413782879, guid: 263f095135aed67428030710516d4c84, type: 3}
-      m_AnimationSpeed: 7.4407244
+      m_AnimationSpeed: 7.544311
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -314585,6 +314585,7 @@ GameObject:
   - component: {fileID: 5767158711561724}
   - component: {fileID: 5068801117300342321}
   - component: {fileID: 1338748722381409597}
+  - component: {fileID: 5960539999353870178}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -325832,6 +325833,22 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &5960539999353870178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6757432060039089938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8575638497172953885
 GameObject:
   m_ObjectHideFlags: 0
