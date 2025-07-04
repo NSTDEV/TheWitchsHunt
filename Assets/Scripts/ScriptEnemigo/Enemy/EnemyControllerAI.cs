@@ -73,7 +73,7 @@ public class EnemyControllerAI : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination(target.position);
-            agent.speed = witchSpeed;
+            agent.speed = witchSpeed;//despues de instanciar cambia la velocidad del navmesh a la declarada en script
         }
          if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
