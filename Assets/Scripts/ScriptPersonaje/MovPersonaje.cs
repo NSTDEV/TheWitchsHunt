@@ -6,11 +6,15 @@ public class MovPersonaje : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private bool isFacingRight = true;
+    public AudioSource pasos;          
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+         // Si te olvidaste de asignarlo en el inspector
+        if (pasos == null) pasos = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -27,6 +31,16 @@ public class MovPersonaje : MonoBehaviour
         // Aplicar movimiento
         transform.position += (Vector3)(inputDir * speed * Time.deltaTime);
 
+
+        // -------- AUDIO DE PASOS --------
+        bool estaCaminando = inputDir.sqrMagnitude > 0.001f;
+
+        if (estaCaminando && !pasos.isPlaying)
+            pasos.Play();
+        else if (!estaCaminando && pasos.isPlaying)
+            pasos.Stop();
+
+        
         /**
         // Animaciones
         animator.SetBool("MoviendoLado", inputX != 0);
