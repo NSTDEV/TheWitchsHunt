@@ -1,30 +1,67 @@
-
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class MovPersonaje : MonoBehaviour
 {
     public float speed = 5f;
-    public float jumpForce = 5f;
     private Rigidbody2D rb;
-    private Animator animator; // referencia al componente Animator del Personaje
-    private bool isFacingRight = true; //respresenta el valor de mirar a la derecha
+    private Animator animator;
+    private bool isFacingRight = true;
+    public AudioSource pasos;          
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>(); // obtenemos la referencia al componente Animator
+        animator = GetComponent<Animator>();
+
+         // Si te olvidaste de asignarlo en el inspector
+        if (pasos == null) pasos = GetComponent<AudioSource>();
     }
 
     void Update()
     {
+        // Obtener dirección de entrada
+        float inputX = Input.GetAxis("Horizontal");
+        float inputY = Input.GetAxis("Vertical");
+        Vector2 inputDir = new Vector2(inputX, inputY);
+
+        // Normalizar para que moverse en diagonal no sea más rápido
+        if (inputDir.magnitude > 1)
+            inputDir = inputDir.normalized;
+
+        // Aplicar movimiento
+        transform.position += (Vector3)(inputDir * speed * Time.deltaTime);
+
+
+        // -------- AUDIO DE PASOS --------
+        bool estaCaminando = inputDir.sqrMagnitude > 0.001f;
+
+        if (estaCaminando && !pasos.isPlaying)
+            pasos.Play();
+        else if (!estaCaminando && pasos.isPlaying)
+            pasos.Stop();
+
         
-        float velocityX = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
-        float velocityY = Input.GetAxis("Vertical") * Time.deltaTime * speed;
-        Vector3 positionC = transform.position;
-        transform.position = new Vector3(velocityX + positionC.x, velocityY + positionC.y, positionC.z);
+        /**
+        // Animaciones
+        animator.SetBool("MoviendoLado", inputX != 0);
+        animator.SetBool("MoviendoArriba", inputY > 0);
+        animator.SetBool("MoviendoAbajo", inputY < 0);
+        animator.SetBool("QuietoLado", inputX == 0 && inputY == 0);
+        animator.SetBool("QuietoArriba", inputX == 0 && inputY == 0);
 
+        // Flip
+        if (inputX < 0 && isFacingRight)
+        {
+            Flip();
+        }
+        else if (inputX > 0 && !isFacingRight)
+        {
+            Flip();
+        }
+        **/
 
-        //animacion de moverse hacia derecha o izquierda
+         //animacion de moverse hacia derecha o izquierda
         if (Input.GetAxis("Horizontal") != 0) // se mueve hacia derecha/
         {
             animator.SetBool("MoviendoLado", true); // activar la animacion de caminar
@@ -39,7 +76,6 @@ public class MovPersonaje : MonoBehaviour
             animator.SetBool("QuietoLado", true); // el personaje permanece en animacion quieto lado
             animator.SetBool("QuietoArriba", false);
         }
-
 
 
         //animacion de moverse hacia arriba
@@ -72,12 +108,12 @@ public class MovPersonaje : MonoBehaviour
         }
 
         // giro del personaje si se mueve hacia la izquierda
-        if (velocityX < 0 && isFacingRight)
+        if (inputX < 0 && isFacingRight)
         {
             Flip();
         }
         //giro del personaje si se mueve a la derecha
-        else if (velocityX > 0 && !isFacingRight)
+        else if (inputX > 0 && !isFacingRight)
         {
             Flip();
         }
@@ -89,39 +125,16 @@ public class MovPersonaje : MonoBehaviour
         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         isFacingRight = !isFacingRight;
     }
-}
 
-/*using UnityEngine;
-
-public class MovPersonaje : MonoBehaviour
-{
-    public float speed = 5f;
-    public float jumpForce = 5f;
-    private Rigidbody rb;
-    private bool isGrounded;
-
-    void Start()
+      // --- Detectar colisión físicamente (colliders NO en trigger) ---
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        rb = GetComponent<Rigidbody>();
-    }
-
-    void Update()
-    {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveZ = Input.GetAxis("Vertical");
-
-        Vector3 movement = new Vector3(moveX, 0f, moveZ) * speed;
-        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (collision.collider.CompareTag("Enemigo"))
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
+            SceneManager.LoadScene("EscenaLose");
         }
     }
+}
 
-    void OnCollisionStay(Collision collision)
-    {
-        isGrounded = true;
-    }
-}*/
+
+
