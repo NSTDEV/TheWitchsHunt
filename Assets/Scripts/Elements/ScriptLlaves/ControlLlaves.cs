@@ -6,6 +6,9 @@ public class ControlLlaves : MonoBehaviour
     public int maxLlaves = 10;
     public int llavesActuales = 0;
     public TextMeshProUGUI textoLlavesUI;
+    [SerializeField] private AudioClip keySound1;
+    [SerializeField] private AudioClip keySound2;
+    [SerializeField] private AudioClip keySound3;
 
     void Update()
     {
@@ -14,6 +17,7 @@ public class ControlLlaves : MonoBehaviour
         {
             llavesActuales--;
             ActualizarTexto();
+            SonidoLlaves();
             Debug.Log("se uso llave : ");
         }
     }
@@ -37,6 +41,22 @@ public class ControlLlaves : MonoBehaviour
         if (textoLlavesUI != null)
         {
             textoLlavesUI.text = " : " + llavesActuales;
+        }
+    }
+
+    void SonidoLlaves()
+    {
+        if (llavesActuales == 1)
+        {
+            SoundManager.instance.EjecutarSonido(keySound1);
+        }
+        else if (llavesActuales == 2)
+        {
+            SoundManager.instance.EjecutarSonido(keySound2);
+        }
+        else if (llavesActuales == 3)
+        {
+            SoundManager.instance.EjecutarSonido(keySound3);
         }
     }
 }

@@ -7,8 +7,8 @@ public class SpawnerBruja2 : MonoBehaviour
 {
     public GameObject enemyPrefab; 
     public Transform spawnPoint;
-    public float spawnMinInterval = 10f;
-    public float spawnMaxInterval = 15f;
+    public float spawnMinInterval = 20f;
+    public float spawnMaxInterval = 30f;
     private float spawnInterval;
     public float detectionRadius = 1f; // para coomprobar colisiones con "Bosque"
     public int poolSize = 10; // cantidad e enemigos
@@ -16,7 +16,7 @@ public class SpawnerBruja2 : MonoBehaviour
     private List<GameObject> enemyPool;
     private void Awake()
     {
-        spawnInterval = 7f;
+        spawnInterval = 15f;
     }
 
     void Start()
@@ -31,13 +31,16 @@ public class SpawnerBruja2 : MonoBehaviour
         }
         //InvokeRepeating("SpawnEnemy", 5f, Random.Range(spawnMinInterval, spawnMaxInterval));
 
-        InvokeRepeating("SpawnEnemy", 5f, spawnInterval);
+        InvokeRepeating("SpawnEnemy", 30f, spawnInterval);
     }
 
     void SpawnEnemy()
     {
+        gameObject.SetActive(true);//activa el spawner
+
         if (enemyPrefab != null && spawnPoint != null)
         {
+
             spawnInterval = Random.Range(spawnMinInterval, spawnMaxInterval);
             Debug.Log(spawnInterval);
             // comprobar posicion de spawner NO overlap con "bosque"
@@ -46,10 +49,10 @@ public class SpawnerBruja2 : MonoBehaviour
             {
                 if (col.CompareTag("Bosque"))
                 {
-                //Debug.Log("no se puede instanciar sobre bosque");
-                
-                StartCoroutine(RetrySpawn());
-                return;
+                    //Debug.Log("no se puede instanciar sobre bosque");
+
+                    StartCoroutine(RetrySpawn());
+                    return;
                 }
             }
 
@@ -70,9 +73,10 @@ public class SpawnerBruja2 : MonoBehaviour
                 if (!enemy.activeInHierarchy)
                 {
                     //enemy.transform.position = spawnPoint.position;
-                    
-                    enemy.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, 0f);
+
+                    enemy.transform.position = new Vector2(spawnPoint.position.x, spawnPoint.position.y);
                     enemy.transform.rotation = spawnPoint.rotation;
+
                     enemy.SetActive(true);
                     return;
                 }
@@ -86,12 +90,6 @@ public class SpawnerBruja2 : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        // cambia posicion de spawner para evitar "bosque"
-        spawnPoint.position += new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), 0f);
-        //spawnPoint.position += new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
-        
-
-        // se intentar instanciar (o reactivar) de nuevo
         SpawnEnemy();
     }
 }

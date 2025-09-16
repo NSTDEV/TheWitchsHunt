@@ -35,6 +35,7 @@ using UnityEngine.AI;
 public class EnemyControllerAI : MonoBehaviour
 {
     [SerializeField] private string targetTag = "Personaje";
+    [SerializeField] private float witchSpeed = 2.5f;
     private Animator animator;
     private SpriteRenderer sr;
     private Transform target;
@@ -43,6 +44,7 @@ public class EnemyControllerAI : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = witchSpeed;
     }
 
     private void Start()
@@ -71,6 +73,7 @@ public class EnemyControllerAI : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination(target.position);
+            agent.speed = witchSpeed;//despues de instanciar cambia la velocidad del navmesh a la declarada en script
         }
          if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {

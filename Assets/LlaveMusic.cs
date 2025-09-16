@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class LlaveMusic : MonoBehaviour
+{
+    [SerializeField] private AudioClip keySound;
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Personaje"))
+        {
+            MusicManager.instance.EjecutarSonido(keySound);
+            Destroy(gameObject);
+        }
+    }
+}
