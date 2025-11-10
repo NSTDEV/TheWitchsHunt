@@ -2186,7 +2186,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d1559c797b5c2cd4988f0d0c2c762007, type: 3}
     - target: {fileID: 1645816780489345873, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 6.792029
+      value: 7.67297
       objectReference: {fileID: 0}
     - target: {fileID: 2115892377229748715, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: necklaceSound
@@ -18429,7 +18429,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3314311828003687520, guid: d0b2916341a49b34fa82c795c482c254, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6058928880493063837, guid: d0b2916341a49b34fa82c795c482c254, type: 3}
       propertyPath: m_LocalScale.x
@@ -18479,6 +18479,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7456669123575406103, guid: d0b2916341a49b34fa82c795c482c254, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 528524311}
     - target: {fileID: 8350793065488784347, guid: d0b2916341a49b34fa82c795c482c254, type: 3}
       propertyPath: m_Name
       value: Dog
