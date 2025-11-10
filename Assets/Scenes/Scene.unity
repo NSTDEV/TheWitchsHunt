@@ -18266,6 +18266,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 268237581850561108, guid: 66c07681b0771e44e98f0695825c1147, type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.016666668
+      objectReference: {fileID: 0}
+    - target: {fileID: 268237581850561108, guid: 66c07681b0771e44e98f0695825c1147, type: 3}
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: 0ededb405c4b8ef46a7358fef3d79312, type: 2}

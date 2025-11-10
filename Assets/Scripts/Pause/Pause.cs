@@ -29,12 +29,23 @@ public class Pause : MonoBehaviour
         juegoPausado = true;
         Pausa.SetActive(true);
         Time.timeScale = 0f;
+        AudioSource[] audios = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource a in audios)
+        {
+            a.Pause();
+        }
     }
     public void Reanudar()
     {   
         juegoPausado = false;
         Pausa.SetActive(false);
         Time.timeScale = 1f;
+
+        AudioSource[] audios = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource a in audios)
+        {
+            a.Play();
+        }
     }
      
 
