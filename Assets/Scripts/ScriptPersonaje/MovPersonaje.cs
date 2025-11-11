@@ -42,25 +42,6 @@ public class MovPersonaje : MonoBehaviour
             pasos.Stop();
 
         
-        /**
-        // Animaciones
-        animator.SetBool("MoviendoLado", inputX != 0);
-        animator.SetBool("MoviendoArriba", inputY > 0);
-        animator.SetBool("MoviendoAbajo", inputY < 0);
-        animator.SetBool("QuietoLado", inputX == 0 && inputY == 0);
-        animator.SetBool("QuietoArriba", inputX == 0 && inputY == 0);
-
-        // Flip
-        if (inputX < 0 && isFacingRight)
-        {
-            Flip();
-        }
-        else if (inputX > 0 && !isFacingRight)
-        {
-            Flip();
-        }
-        **/
-
          //animacion de moverse hacia derecha o izquierda
         if (Input.GetAxis("Horizontal") != 0) // se mueve hacia derecha/
         {
@@ -76,7 +57,6 @@ public class MovPersonaje : MonoBehaviour
             animator.SetBool("QuietoLado", true); // el personaje permanece en animacion quieto lado
             animator.SetBool("QuietoArriba", false);
         }
-
 
         //animacion de moverse hacia arriba
         if (Input.GetAxis("Vertical") > 0) // comparamos el valor del movimiento (-1 / 0 / 1)
@@ -107,7 +87,6 @@ public class MovPersonaje : MonoBehaviour
 
         }
 
-        // giro del personaje si se mueve hacia la izquierda
         if (inputX < 0 && isFacingRight)
         {
             Flip();
