@@ -52,6 +52,7 @@ public class DialogueScript : MonoBehaviour
 
     private void NextDialogueLine()
     {
+
         lineIndex++;
         if (lineIndex < dialogueLines.Length)
         {
