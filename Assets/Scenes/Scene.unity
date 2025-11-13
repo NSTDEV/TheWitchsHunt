@@ -18732,11 +18732,11 @@ PrefabInstance:
     - target: {fileID: 3165167776329768453, guid: c1db9b6d0d5970044a2d5f0f3e7b6f78, type: 3}
       propertyPath: sonidoAbrir
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: a247a401ab04ecb47963fe713a103741, type: 3}
     - target: {fileID: 3165167776329768453, guid: c1db9b6d0d5970044a2d5f0f3e7b6f78, type: 3}
       propertyPath: sonidoCerrar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 296f330cbee387640b433421728baf36, type: 3}
     - target: {fileID: 3165167776329768453, guid: c1db9b6d0d5970044a2d5f0f3e7b6f78, type: 3}
       propertyPath: textoNotaTMP
       value: 

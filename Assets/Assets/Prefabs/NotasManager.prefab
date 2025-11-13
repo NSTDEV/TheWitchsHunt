@@ -46,3 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelNota: {fileID: 0}
   textoNotaTMP: {fileID: 0}
+  audioSource: {fileID: 0}
+  sonidoAbrir: {fileID: 8300000, guid: a247a401ab04ecb47963fe713a103741, type: 3}
+  sonidoCerrar: {fileID: 8300000, guid: 296f330cbee387640b433421728baf36, type: 3}
