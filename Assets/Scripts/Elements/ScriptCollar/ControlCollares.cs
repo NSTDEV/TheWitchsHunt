@@ -4,9 +4,24 @@ using System.Collections;
 
 public class ControlCollares : MonoBehaviour
 {
+    public static ControlCollares instance; // 🔹 acceso global
+    
     public int maxCollares = 10;
     public int collaresActuales = 0;
     public TextMeshProUGUI textoUI;
+
+    void Awake()
+    {
+        // 🔹 Si ya hay una instancia, eliminar duplicado
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject); // 🔹 se mantiene entre escenas
+    }
 
     public void RecogerCollar()
     {
@@ -14,6 +29,10 @@ public class ControlCollares : MonoBehaviour
         {
             collaresActuales++;
             ActualizarTexto();
+        }
+        else
+        {
+            Debug.Log("No puedo llevar más collares");
         }
     }
 
@@ -28,8 +47,6 @@ public class ControlCollares : MonoBehaviour
                 {
                     collaresActuales--;
                     ActualizarTexto();
-
-
                     StartCoroutine(Blink(enemigo));
                     break;
                 }

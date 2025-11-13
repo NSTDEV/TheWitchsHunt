@@ -228,3 +228,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1920a8431a10cf946b6fe4431753e1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  necklaceSound: {fileID: 0}
