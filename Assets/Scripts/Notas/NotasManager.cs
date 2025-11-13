@@ -31,7 +31,12 @@ public class NotasManager : MonoBehaviour
         panelNota.SetActive(true);
         textoNotaTMP.text = texto;
 
-        // 🎵 Reproducir sonido de abrir
+        AudioSource[] audios = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource a in audios)
+        {
+            a.Pause();
+        }
+
         if (audioSource != null && sonidoAbrir != null)
             audioSource.PlayOneShot(sonidoAbrir);
 
@@ -40,7 +45,7 @@ public class NotasManager : MonoBehaviour
 
     void Update()
     {
-        if (notaAbierta && Input.GetKeyDown(KeyCode.E))
+        if (notaAbierta && Input.GetButtonDown("Fire1"))
         {
             CerrarNota();
         }
@@ -60,6 +65,12 @@ public class NotasManager : MonoBehaviour
         {
             Destroy(notaActual.gameObject);
             notaActual = null;
+        }
+
+        AudioSource[] audios = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource a in audios)
+        {
+            a.UnPause();
         }
     }
 }
