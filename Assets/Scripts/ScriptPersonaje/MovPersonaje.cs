@@ -1,5 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MovPersonaje : MonoBehaviour
 {
@@ -7,113 +8,129 @@ public class MovPersonaje : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private bool isFacingRight = true;
-    public AudioSource pasos;          
+    public AudioSource pasos;
+
+    private bool isDead = false;
+    private Vector2 lastMoveDir = Vector2.down;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-         // Si te olvidaste de asignarlo en el inspector
         if (pasos == null) pasos = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        // Obtener dirección de entrada
+        if (isDead) return;
+
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
         Vector2 inputDir = new Vector2(inputX, inputY);
 
-        // Normalizar para que moverse en diagonal no sea más rápido
         if (inputDir.magnitude > 1)
-            inputDir = inputDir.normalized;
+            inputDir.Normalize();
 
-        // Aplicar movimiento
+        // Movimiento
         transform.position += (Vector3)(inputDir * speed * Time.deltaTime);
-
 
         // -------- AUDIO DE PASOS --------
         bool estaCaminando = inputDir.sqrMagnitude > 0.001f;
-
         if (estaCaminando && !pasos.isPlaying)
             pasos.Play();
         else if (!estaCaminando && pasos.isPlaying)
             pasos.Stop();
 
-        
-         //animacion de moverse hacia derecha o izquierda
-        if (Input.GetAxis("Horizontal") != 0) // se mueve hacia derecha/
+        // -------- ANIMACIONES --------
+        if (estaCaminando)
         {
-            animator.SetBool("MoviendoLado", true); // activar la animacion de caminar
-            animator.SetBool("MoviendoArriba", false);
-            animator.SetBool("QuietoLado", false);
-            animator.SetBool("QuietoArriba", false);
-            animator.SetBool("MoviendoAbajo", false);
+            lastMoveDir = inputDir;
+
+            if (Mathf.Abs(inputX) > Mathf.Abs(inputY))
+            {
+                animator.SetBool("MoviendoLado", true);
+                animator.SetBool("MoviendoArriba", false);
+                animator.SetBool("MoviendoAbajo", false);
+                animator.SetBool("QuietoLado", false);
+                animator.SetBool("QuietoArriba", false);
+            }
+            else if (inputY > 0)
+            {
+                animator.SetBool("MoviendoArriba", true);
+                animator.SetBool("MoviendoLado", false);
+                animator.SetBool("MoviendoAbajo", false);
+                animator.SetBool("QuietoLado", false);
+                animator.SetBool("QuietoArriba", false);
+            }
+            else if (inputY < 0)
+            {
+                animator.SetBool("MoviendoAbajo", true);
+                animator.SetBool("MoviendoArriba", false);
+                animator.SetBool("MoviendoLado", false);
+                animator.SetBool("QuietoLado", false);
+                animator.SetBool("QuietoArriba", false);
+            }
         }
         else
         {
-            animator.SetBool("MoviendoLado", false); // desactivar la animacion de caminar
-            animator.SetBool("QuietoLado", true); // el personaje permanece en animacion quieto lado
-            animator.SetBool("QuietoArriba", false);
-        }
-
-        //animacion de moverse hacia arriba
-        if (Input.GetAxis("Vertical") > 0) // comparamos el valor del movimiento (-1 / 0 / 1)
-        {
-            animator.SetBool("QuietoArriba", false);
-            animator.SetBool("MoviendoArriba", true); // activar la animacion de caminar
             animator.SetBool("MoviendoLado", false);
-            animator.SetBool("QuietoLado", false);
-            animator.SetBool("MoviendoAbajo", false);
-        }
-        else
-        {
-            animator.SetBool("QuietoArriba", true); // desactivar la animacion de caminar
             animator.SetBool("MoviendoArriba", false);
-        }
+            animator.SetBool("MoviendoAbajo", false);
 
-        //animacion de moverse hacia abajo
-        if (Input.GetAxis("Vertical") < 0)
-        {
-            animator.SetBool("MoviendoAbajo", true); // activar la animacion de caminar
-            animator.SetBool("QuietoArriba", false);
-            animator.SetBool("QuietoLado", false);
-            animator.SetBool("MoviendoLado", false);
-        }
-        else
-        {
-            animator.SetBool("MoviendoAbajo", false); // desactivar la animacion de caminar
-
+            if (Mathf.Abs(lastMoveDir.x) > Mathf.Abs(lastMoveDir.y))
+            {
+                animator.SetBool("QuietoLado", true);
+                animator.SetBool("QuietoArriba", false);
+            }
+            else if (lastMoveDir.y > 0)
+            {
+                animator.SetBool("QuietoArriba", true);
+                animator.SetBool("QuietoLado", false);
+            }
+            else
+            {
+                // quieto abajo
+                animator.SetBool("QuietoArriba", false);
+                animator.SetBool("QuietoLado", false);
+            }
         }
 
         if (inputX < 0 && isFacingRight)
-        {
             Flip();
-        }
-        //giro del personaje si se mueve a la derecha
         else if (inputX > 0 && !isFacingRight)
-        {
             Flip();
-        }
     }
 
-    // cambiamos la escala en el eje X para voltear el personaje
     private void Flip()
     {
         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         isFacingRight = !isFacingRight;
     }
 
-      // --- Detectar colisión físicamente (colliders NO en trigger) ---
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Enemigo"))
-        {
-            SceneManager.LoadScene("EscenaLose");
-        }
+            StartCoroutine(Morir());
+
+        if (collision.collider.CompareTag("Cueva"))
+            SceneManager.LoadScene("Cueva");
+    }
+
+    private IEnumerator Morir()
+    {
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        isDead = true;
+        pasos.Stop();
+
+        animator.SetBool("MoviendoLado", false);
+        animator.SetBool("MoviendoArriba", false);
+        animator.SetBool("MoviendoAbajo", false);
+        animator.SetBool("QuietoLado", false);
+        animator.SetBool("QuietoArriba", false);
+        animator.SetTrigger("Muerte");
+
+        yield return new WaitForSeconds(1.5f);
+
+        SceneManager.LoadScene("EscenaLose");
     }
 }
-
-
-

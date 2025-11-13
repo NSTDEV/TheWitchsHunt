@@ -57,7 +57,6 @@ public class Pause : MonoBehaviour
         juegoPausado = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        print("Enzo puto");
     }
 
     public void VolverMenu(string nombre)
