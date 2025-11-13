@@ -25,11 +25,12 @@ public class Pause : MonoBehaviour
     }
 
     public void Pausar()
-    {  
+    { 
+        if (Time.timeScale != 1f) { return; }
         juegoPausado = true;
         Pausa.SetActive(true);
         Time.timeScale = 0f;
-        
+
         AudioSource[] audios = FindObjectsOfType<AudioSource>();
         foreach (AudioSource a in audios)
         {
@@ -46,7 +47,7 @@ public class Pause : MonoBehaviour
         AudioSource[] audios = FindObjectsOfType<AudioSource>();
         foreach (AudioSource a in audios)
         {
-            a.Play();
+            a.UnPause();
         }
     }
      

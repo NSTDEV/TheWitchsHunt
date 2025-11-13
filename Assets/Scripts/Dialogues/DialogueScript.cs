@@ -26,8 +26,6 @@ public class DialogueScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale != 1f) {return;}
-        
         if (didDialogueStart && Input.GetButtonDown("Fire1"))
         {
             if (dialogueText.text == dialogueLines[lineIndex])
