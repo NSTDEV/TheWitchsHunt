@@ -239,6 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8ef1fce0015474391b7f96fe3fa6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickAudio: {fileID: 0}
+  switchAudio: {fileID: 0}
 --- !u!114 &549950177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,7 +857,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MenuPrincipal
+          m_StringArgument: MenuPrincipal 2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1493459915
