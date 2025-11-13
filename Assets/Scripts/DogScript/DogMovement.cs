@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class DogMovement : MonoBehaviour
 {
-    [SerializeField] private Transform Player;
+    private Transform Player;
     [SerializeField] private float movementSpeed = 5f;
 
     //private UnityEngine.AI.NavMeshAgent agent;
@@ -43,6 +43,12 @@ public class DogMovement : MonoBehaviour
         {
             agent.enabled = true;
             navigationActive = true;
+
+            GameObject targetObject = GameObject.FindGameObjectWithTag("Personaje");
+            if (targetObject != null)
+            {
+                Player = targetObject.transform;
+            }
         }
     }
 }
