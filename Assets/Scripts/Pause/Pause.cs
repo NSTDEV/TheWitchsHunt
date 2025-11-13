@@ -36,6 +36,7 @@ public class Pause : MonoBehaviour
         {
             a.Pause();
         }
+
     }
 
     public void Reanudar()
@@ -50,18 +51,20 @@ public class Pause : MonoBehaviour
             a.UnPause();
         }
     }
-     
 
     public void Reiniciar()
     {
         juegoPausado = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        print("Enzo puto");
     }
+
     public void VolverMenu(string nombre)
     {
         SceneManager.LoadScene(nombre);
     }
+
     public void Cerrar()
     {
         Application.Quit();
