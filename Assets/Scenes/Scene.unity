@@ -1937,6 +1937,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25f610676a786da42a657d627aee5d87, type: 3}
+--- !u!95 &964833987 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7423385317224725441, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
+  m_PrefabInstance: {fileID: 1901337505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &964833993 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6794220138809073045, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
+  m_PrefabInstance: {fileID: 1901337505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &973204069 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1137503051945596283, guid: 7503d9a46977f694cbde931c04d94d56, type: 3}
@@ -2028,7 +2038,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d1559c797b5c2cd4988f0d0c2c762007, type: 3}
     - target: {fileID: 1645816780489345873, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 6.6380324
+      value: 7.242647
       objectReference: {fileID: 0}
     - target: {fileID: 2115892377229748715, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: necklaceSound
@@ -17054,6 +17064,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keySound: {fileID: 8300000, guid: a0213aeb27494084f9016101901dfe26, type: 3}
+--- !u!95 &1374149995 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2299334899768709499, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
+  m_PrefabInstance: {fileID: 1901337505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1376197241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17599,6 +17614,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personaje
       objectReference: {fileID: 0}
+    - target: {fileID: 3927771792688501591, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 964833993}
+    - target: {fileID: 3927771792688501591, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
+      propertyPath: screamDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 33fc7b7adf87ca34886fa8b6cbb406aa, type: 3}
+    - target: {fileID: 3927771792688501591, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
+      propertyPath: distanciaMax
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927771792688501591, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
+      propertyPath: sonidoCollar
+      value: 
+      objectReference: {fileID: 8300000, guid: 33fc7b7adf87ca34886fa8b6cbb406aa, type: 3}
+    - target: {fileID: 3927771792688501591, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
+      propertyPath: enemigoLayer.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5255660133590125735, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
       propertyPath: m_Radius
       value: 3
@@ -17897,8 +17932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7091189528346747668, guid: d7321ec0f9d3a0e4b988c45d6a51c7a6, type: 3}
   spawnPoint: {fileID: 2077661147}
-  spawnMinInterval: 38
-  spawnMaxInterval: 40
+  spawnInterval: 15
   detectionRadius: 1
   poolSize: 1
 --- !u!114 &2077661146
@@ -17913,7 +17947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0624de841319e5e4fb3c988f8b4c1c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 964833993}
   orbitRadius: 10
   orbitSpeed: 2
 --- !u!4 &2077661147
@@ -18448,15 +18482,15 @@ PrefabInstance:
     - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 964833987}
     - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
       propertyPath: m_SceneBindings.Array.data[2].value
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 964833987}
     - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
       propertyPath: m_SceneBindings.Array.data[5].value
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1374149995}
     - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
       propertyPath: m_SceneBindings.Array.data[6].value
       value: 
