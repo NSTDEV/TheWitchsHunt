@@ -1,13 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
 public class MenuOpciones : MonoBehaviour
 {
-    [SerializeField] private AudioMixer AudioMixer;
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private string volumeParam = "Volumen"; // nombre del parámetro en tu mixer
 
-    public void CambiarVolumen(float volumen){
-        AudioMixer.SetFloat("Volumen", volumen);
+    // Este método lo llamás desde el slider (OnValueChanged)
+    public void CambiarVolumen(float volumen)
+    {
+        // Evitar valores negativos o cero para el logaritmo
+        volumen = Mathf.Clamp(volumen, 0.0001f, 1f);
+
+        // Conversión lineal → logarítmica (dB)
+        float dB = Mathf.Log10(volumen) * 20f;
+
+        // Aplicar al mixer
+        audioMixer.SetFloat(volumeParam, dB);
     }
 }
