@@ -8,6 +8,19 @@ public class ControlCollares : MonoBehaviour
     public int collaresActuales = 0;
     public TextMeshProUGUI textoUI;
 
+    //Header("Raycast y distancia")]
+    [SerializeField] private Transform jugador;        // referencia al jugador
+    [SerializeField] private float distanciaMax = 5f; // ajustable en el Inspector
+    [SerializeField] private LayerMask enemigoLayer;   // para filtrar solo enemigos en el raycast
+
+    
+
+void Start()
+    {
+        ActualizarTexto();
+
+    }
+
     public void RecogerCollar()
     {
         if (collaresActuales < maxCollares)
@@ -21,7 +34,15 @@ public class ControlCollares : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J) && collaresActuales > 0)
         {
-            GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
+            GameObject enemigoCercano = BuscarEnemigoCercano();
+            if (enemigoCercano != null)
+            {
+                
+                collaresActuales--;
+                ActualizarTexto();
+                StartCoroutine(Blink(enemigoCercano));
+            }
+            /*GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
             foreach (GameObject enemigo in enemigos)
             {
                 if (enemigo.activeInHierarchy)
@@ -33,8 +54,29 @@ public class ControlCollares : MonoBehaviour
                     StartCoroutine(Blink(enemigo));
                     break;
                 }
+            }*/
+        }
+    }
+
+    /***********/
+    GameObject BuscarEnemigoCercano()
+    {
+        GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
+        foreach (GameObject enemigo in enemigos)
+        {
+            if (enemigo.activeInHierarchy)
+            {
+                float distancia = Vector2.Distance(jugador.position, enemigo.transform.position);
+                if (distancia <= distanciaMax)
+                {
+                    // Opcional: trazar raycast para depuración visual
+                    Debug.DrawLine(jugador.position, enemigo.transform.position, Color.red, 0.5f);
+
+                    return enemigo;
+                }
             }
         }
+        return null;
     }
 
     IEnumerator Blink(GameObject enemigo)
@@ -48,6 +90,7 @@ public class ControlCollares : MonoBehaviour
         yield return new WaitForSeconds(1f);
         enemigo.SetActive(false);
     }
+
 
     void ActualizarTexto()
     {

@@ -57538,8 +57538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7091189528346747668, guid: d7321ec0f9d3a0e4b988c45d6a51c7a6, type: 3}
   spawnPoint: {fileID: 1715624742}
-  spawnMinInterval: 10
-  spawnMaxInterval: 10
+  spawnInterval: 15
   detectionRadius: 1
   poolSize: 1
 --- !u!114 &1715624741
@@ -96418,8 +96417,16 @@ PrefabInstance:
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3927771792688501591, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 114161532}
+    - target: {fileID: 3927771792688501591, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
       propertyPath: collaresActuales
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927771792688501591, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
+      propertyPath: enemigoLayer.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4034672639196365519, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
       propertyPath: m_LocalScale.x

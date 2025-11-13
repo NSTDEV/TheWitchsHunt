@@ -7,9 +7,9 @@ public class SpawnerBruja2 : MonoBehaviour
 {
     public GameObject enemyPrefab; 
     public Transform spawnPoint;
-    public float spawnMinInterval = 20f;
-    public float spawnMaxInterval = 30f;
-    private float spawnInterval;
+    //public float spawnMinInterval = 20f;
+    //public float spawnMaxInterval = 30f;
+    public float spawnInterval;
     public float detectionRadius = 1f; // para coomprobar colisiones con "Bosque"
     public int poolSize = 10; // cantidad e enemigos
 
@@ -41,7 +41,7 @@ public class SpawnerBruja2 : MonoBehaviour
         if (enemyPrefab != null && spawnPoint != null)
         {
 
-            spawnInterval = Random.Range(spawnMinInterval, spawnMaxInterval);
+            //spawnInterval = Random.Range(spawnMinInterval, spawnMaxInterval);
             Debug.Log(spawnInterval);
             // comprobar posicion de spawner NO overlap con "bosque"
             Collider2D[] colliders = Physics2D.OverlapCircleAll(spawnPoint.position, detectionRadius);
