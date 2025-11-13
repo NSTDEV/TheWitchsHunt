@@ -898,6 +898,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8720771776148322293}
   normalColor: {r: 0, g: 0, b: 0, a: 1}
   alertColor: {r: 0.02, g: 0, b: 0, a: 1}
+  triggerCollider: {fileID: 5255660133590125735}
 --- !u!58 &5255660133590125735
 CircleCollider2D:
   m_ObjectHideFlags: 0
