@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -441,6 +441,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1020016645427342952, guid: 85843f474aae564429e74ca7ca84487f, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020016645427342952, guid: 85843f474aae564429e74ca7ca84487f, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590812397824771429, guid: 85843f474aae564429e74ca7ca84487f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5322129566737042684, guid: 85843f474aae564429e74ca7ca84487f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -520,6 +532,30 @@ PrefabInstance:
     - target: {fileID: 5322129566737042684, guid: 85843f474aae564429e74ca7ca84487f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566195327026316707, guid: 85843f474aae564429e74ca7ca84487f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566195327026316707, guid: 85843f474aae564429e74ca7ca84487f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566195327026316707, guid: 85843f474aae564429e74ca7ca84487f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566195327026316707, guid: 85843f474aae564429e74ca7ca84487f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566195327026316707, guid: 85843f474aae564429e74ca7ca84487f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566195327026316707, guid: 85843f474aae564429e74ca7ca84487f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 508
       objectReference: {fileID: 0}
     - target: {fileID: 8989474209377199375, guid: 85843f474aae564429e74ca7ca84487f, type: 3}
       propertyPath: m_Name
