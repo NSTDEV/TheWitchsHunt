@@ -112,34 +112,19 @@ public class MovPersonaje : MonoBehaviour
         if (collision.collider.CompareTag("Enemigo"))
             StartCoroutine(Morir());
 
-        if (collision.collider.CompareTag("Cueva"))
+        if (collision.collider.CompareTag("Cueva") && ControlLlaves.instance.llavesActuales >= 1)
             SceneManager.LoadScene("Cueva");
 
-        if (collision.collider.CompareTag("Exterior"))
+        if (collision.collider.CompareTag("Exterior") && ControlLlaves.instance.llavesActuales >= 2)
         {
-            if (ControlLlaves.instance != null && ControlLlaves.instance.llavesActuales >= 2)
-            {
-                SceneManager.LoadScene("Scene");
-            }
-            else
-            {
-                Debug.Log("❌ Necesitas 2 llaves para salir al exterior.");
-            }
+            SceneManager.LoadScene("BosqueParte2");
         }
 
-        if (collision.collider.CompareTag("Salida"))
+        if (collision.collider.CompareTag("Salida") && ControlLlaves.instance.llavesActuales >= 3)
         {
-            if (ControlLlaves.instance != null && ControlLlaves.instance.llavesActuales >= 3)
-            {
-                SceneManager.LoadScene("EscenaWin");
-            }
-            else
-            {
-                Debug.Log("❌ Necesitas 3 llaves para salir de la cueva.");
-            }
+            SceneManager.LoadScene("EscenaWin");
         }
     }
-
 
     private IEnumerator Morir()
     {
