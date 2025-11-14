@@ -11,12 +11,16 @@ public class EnemyGrainTrigger : MonoBehaviour
     public float alertGrain = 0.7f;
     public float smoothSpeed = 3f;
 
+    private FilmGrain filmGrain;
+
+    [Header("Split Toning (Activar / Desactivar)")]
+    private SplitToning splitToning;
+
     [Header("Oscuridad (Sprite Renderer)")]
     public SpriteRenderer spriteRenderer;
     public Color normalColor = Color.black;
     public Color alertColor = new Color(0.6f, 0.1f, 0.1f);
 
-    private FilmGrain filmGrain;
     private float targetIntensity;
     private Color targetColor;
 
@@ -31,17 +35,20 @@ public class EnemyGrainTrigger : MonoBehaviour
 
     void Start()
     {
-        if (globalVolume != null && globalVolume.profile.TryGet(out filmGrain))
+        if (globalVolume != null && globalVolume.profile != null)
         {
-            filmGrain.intensity.value = normalGrain;
-            targetIntensity = normalGrain;
+            globalVolume.profile.TryGet(out filmGrain);
+            globalVolume.profile.TryGet(out splitToning);
         }
 
+        if (filmGrain != null)
+            filmGrain.intensity.value = targetIntensity = normalGrain;
+
+        if (splitToning != null)
+            splitToning.active = false;
+
         if (spriteRenderer != null)
-        {
-            spriteRenderer.color = normalColor;
-            targetColor = normalColor;
-        }
+            spriteRenderer.color = targetColor = normalColor;
 
         if (triggerCollider == null)
             triggerCollider = GetComponent<Collider2D>();
@@ -50,22 +57,18 @@ public class EnemyGrainTrigger : MonoBehaviour
     void Update()
     {
         if (filmGrain != null)
-        {
             filmGrain.intensity.value = Mathf.Lerp(
                 filmGrain.intensity.value,
                 targetIntensity,
                 Time.deltaTime * smoothSpeed
             );
-        }
 
         if (spriteRenderer != null)
-        {
             spriteRenderer.color = Color.Lerp(
                 spriteRenderer.color,
                 targetColor,
                 Time.deltaTime * smoothSpeed
             );
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -76,6 +79,9 @@ public class EnemyGrainTrigger : MonoBehaviour
         {
             targetIntensity = alertGrain;
             targetColor = alertColor;
+
+            if (splitToning != null)
+                splitToning.active = true;
         }
     }
 
@@ -87,6 +93,9 @@ public class EnemyGrainTrigger : MonoBehaviour
         {
             targetIntensity = normalGrain;
             targetColor = normalColor;
+
+            if (splitToning != null)
+                splitToning.active = false;
         }
     }
 }
