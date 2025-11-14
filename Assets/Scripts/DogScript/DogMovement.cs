@@ -32,10 +32,10 @@ public class DogMovement : MonoBehaviour
     private void Update()
     {
         //agent.SetDestination(Player.position);
-        /* if (navigationActive)
+         if (navigationActive)
         {
             agent.SetDestination(Player.position);
-        }*/
+        }
 
         if (navigationActive && Player != null)
         {
