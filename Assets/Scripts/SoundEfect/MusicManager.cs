@@ -23,4 +23,12 @@ public class MusicManager : MonoBehaviour
     {
         audioSource.PlayOneShot(sonido);
     }
+
+    public void DetenerSonido()
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+    }
 }
