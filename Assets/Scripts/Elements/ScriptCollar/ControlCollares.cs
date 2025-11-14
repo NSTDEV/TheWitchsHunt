@@ -11,6 +11,15 @@ public class ControlCollares : MonoBehaviour
     public int collaresActuales = 0;
     public TextMeshProUGUI textoUI;
 
+
+    [Header("Raycast y distancia")]
+    [SerializeField] private Transform jugador;        // referencia al jugador
+    [SerializeField] private float distanciaMax = 10f; // ajustable en el Inspector
+    [SerializeField] private LayerMask enemigoLayer;   // para filtrar solo enemigos en el raycast
+
+
+    public AudioSource sonidoCollar; // 🔊 AUDIO DEL COLLAR
+
     void Awake()
     {
         // 🔹 Si ya hay una instancia, eliminar duplicado
@@ -23,6 +32,7 @@ public class ControlCollares : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject); // 🔹 se mantiene entre escenas
     }
+    
 
     public void RecogerCollar()
     {
@@ -44,8 +54,13 @@ public class ControlCollares : MonoBehaviour
             return;
 
         // ✔️ Funciona normalmente en cualquier otra escena
-        if (Input.GetKeyDown(KeyCode.J) && collaresActuales > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && collaresActuales > 0)
         {
+
+            // 🔊 REPRODUCIR SONIDO DEL COLLAR
+            if (sonidoCollar != null)
+                sonidoCollar.Play();
+
             GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
             foreach (GameObject enemigo in enemigos)
             {
