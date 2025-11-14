@@ -9,6 +9,9 @@ TagManager:
   - Bosque
   - Enemigo
   - Personaje
+  - Cueva
+  - Salida
+  - Exterior
   layers:
   - Default
   - TransparentFX

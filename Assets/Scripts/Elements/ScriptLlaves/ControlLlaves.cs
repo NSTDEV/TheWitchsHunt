@@ -3,6 +3,7 @@ using TMPro;
 
 public class ControlLlaves : MonoBehaviour
 {
+    public static ControlLlaves instance; // 🔹 acceso global
     public int maxLlaves = 10;
     public int llavesActuales = 0;
     public TextMeshProUGUI textoLlavesUI;
@@ -10,15 +11,26 @@ public class ControlLlaves : MonoBehaviour
     [SerializeField] private AudioClip keySound2;
     [SerializeField] private AudioClip keySound3;
 
+    void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Update()
     {
-        // logica "puede abrir puerta al apretar E, si se tiene una llave"
         if (Input.GetKeyDown(KeyCode.E) && llavesActuales > 0)
         {
             llavesActuales--;
             ActualizarTexto();
             SonidoLlaves();
-            Debug.Log("se uso llave : ");
+            Debug.Log("Se usó una llave");
         }
     }
 
@@ -28,11 +40,11 @@ public class ControlLlaves : MonoBehaviour
         {
             llavesActuales++;
             ActualizarTexto();
-            Debug.Log(" " + llavesActuales);
+            Debug.Log("Llaves: " + llavesActuales);
         }
         else
         {
-            Debug.Log("no puedo llevar mas llaves");
+            Debug.Log("No puedo llevar más llaves");
         }
     }
 
@@ -46,17 +58,11 @@ public class ControlLlaves : MonoBehaviour
 
     void SonidoLlaves()
     {
-        if (llavesActuales == 1)
+        switch (llavesActuales)
         {
-            SoundManager.instance.EjecutarSonido(keySound1);
-        }
-        else if (llavesActuales == 2)
-        {
-            SoundManager.instance.EjecutarSonido(keySound2);
-        }
-        else if (llavesActuales == 3)
-        {
-            SoundManager.instance.EjecutarSonido(keySound3);
+            case 1: SoundManager.instance.EjecutarSonido(keySound1); break;
+            case 2: SoundManager.instance.EjecutarSonido(keySound2); break;
+            case 3: SoundManager.instance.EjecutarSonido(keySound3); break;
         }
     }
 }
