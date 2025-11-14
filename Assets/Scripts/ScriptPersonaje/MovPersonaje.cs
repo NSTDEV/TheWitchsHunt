@@ -111,9 +111,9 @@ public class MovPersonaje : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Collar"))
+        if (collision.collider.CompareTag("Llave"))
         {
-            OnCollarCollision?.Invoke();  // 🔹 Avisamos a la bruja
+            OnCollarCollision?.Invoke();
         }
         if (collision.collider.CompareTag("Enemigo"))
             StartCoroutine(Morir());
@@ -133,7 +133,7 @@ public class MovPersonaje : MonoBehaviour
     }
      private void OnTriggerEnter2D(Collider2D other)
 {
-   if (other.CompareTag("Collar"))
+   if (other.CompareTag("Llave"))
     {
         Debug.Log("COLLAR DETECTADO → EVENTO ENVIADO (Trigger)");
         OnCollarCollision?.Invoke();

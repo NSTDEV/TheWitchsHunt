@@ -1840,6 +1840,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6058928880493063837, guid: d0b2916341a49b34fa82c795c482c254, type: 3}
   m_PrefabInstance: {fileID: 5669463514626958227}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &948146012 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2650593228313213220, guid: d0b2916341a49b34fa82c795c482c254, type: 3}
+  m_PrefabInstance: {fileID: 5669463514626958227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &955380191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2028,7 +2033,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d1559c797b5c2cd4988f0d0c2c762007, type: 3}
     - target: {fileID: 1645816780489345873, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 6.5625515
+      value: 6.6380324
       objectReference: {fileID: 0}
     - target: {fileID: 2115892377229748715, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: necklaceSound
@@ -165871,6 +165876,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personaje
       objectReference: {fileID: 0}
+    - target: {fileID: 5250639024182402201, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
+      propertyPath: alertGrain
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5255660133590125735, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
       propertyPath: m_Radius
       value: 3
@@ -166629,10 +166638,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7399635058966272672, guid: d0b2916341a49b34fa82c795c482c254, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7456669123575406103, guid: d0b2916341a49b34fa82c795c482c254, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7456669123575406103, guid: d0b2916341a49b34fa82c795c482c254, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 948146012}
     - target: {fileID: 8350793065488784347, guid: d0b2916341a49b34fa82c795c482c254, type: 3}
       propertyPath: m_Name
       value: Dog
