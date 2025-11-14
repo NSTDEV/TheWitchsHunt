@@ -13,7 +13,7 @@ public class CuevaBrujaIA : MonoBehaviour
     private NavMeshAgent agent;
 
     private bool canChase = false;   // 🔹 Nueva variable: control de persecución
-
+        //Bruja mod
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
