@@ -16,13 +16,7 @@ public class EnemyGrainTrigger : MonoBehaviour
     [Header("Split Toning (Activar / Desactivar)")]
     private SplitToning splitToning;
 
-    [Header("Oscuridad (Sprite Renderer)")]
-    public SpriteRenderer spriteRenderer;
-    public Color normalColor = Color.black;
-    public Color alertColor = new Color(0.6f, 0.1f, 0.1f);
-
     private float targetIntensity;
-    private Color targetColor;
 
     [Header("DEBUG")]
     public Collider2D triggerCollider;
@@ -47,9 +41,6 @@ public class EnemyGrainTrigger : MonoBehaviour
         if (splitToning != null)
             splitToning.active = false;
 
-        if (spriteRenderer != null)
-            spriteRenderer.color = targetColor = normalColor;
-
         if (triggerCollider == null)
             triggerCollider = GetComponent<Collider2D>();
     }
@@ -62,13 +53,6 @@ public class EnemyGrainTrigger : MonoBehaviour
                 targetIntensity,
                 Time.deltaTime * smoothSpeed
             );
-
-        if (spriteRenderer != null)
-            spriteRenderer.color = Color.Lerp(
-                spriteRenderer.color,
-                targetColor,
-                Time.deltaTime * smoothSpeed
-            );
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -78,7 +62,6 @@ public class EnemyGrainTrigger : MonoBehaviour
         if (other.CompareTag("Enemigo"))
         {
             targetIntensity = alertGrain;
-            targetColor = alertColor;
 
             if (splitToning != null)
                 splitToning.active = true;
@@ -92,7 +75,6 @@ public class EnemyGrainTrigger : MonoBehaviour
         if (other.CompareTag("Enemigo"))
         {
             targetIntensity = normalGrain;
-            targetColor = normalColor;
 
             if (splitToning != null)
                 splitToning.active = false;
