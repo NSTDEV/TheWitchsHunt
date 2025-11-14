@@ -15,10 +15,10 @@ MonoBehaviour:
   active: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.509434, g: 0, b: 0, a: 1}
+    m_Value: {r: 1, g: 0, b: 0, a: 1}
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
+    m_Value: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
   balance:
     m_OverrideState: 1
     m_Value: 40

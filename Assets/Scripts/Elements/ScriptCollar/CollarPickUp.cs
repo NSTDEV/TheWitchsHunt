@@ -8,13 +8,15 @@ public class CollarPickup : MonoBehaviour
     {
         if (other.CompareTag("Personaje"))
         {
-            if (necklaceSound != null)
+            if (necklaceSound != null && SoundManager.instance != null)
                 SoundManager.instance.EjecutarSonido(necklaceSound);
 
             if (ControlCollares.instance != null)
                 ControlCollares.instance.RecogerCollar();
+            else
+                Debug.LogError("❌ ControlLlaves.instance es NULL");
 
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }

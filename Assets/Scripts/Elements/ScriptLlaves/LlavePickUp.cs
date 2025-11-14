@@ -8,13 +8,18 @@ public class LlavePickup : MonoBehaviour
     {
         if (other.CompareTag("Personaje"))
         {
-            if (keySound != null)
+            Debug.Log("Trigger detectado con el jugador");
+
+            if (keySound != null && SoundManager.instance != null)
                 SoundManager.instance.EjecutarSonido(keySound);
 
             if (ControlLlaves.instance != null)
                 ControlLlaves.instance.RecogerLlave();
+            else
+                Debug.LogError("❌ ControlLlaves.instance es NULL");
 
             Destroy(gameObject);
         }
+
     }
 }
