@@ -154,5 +154,6 @@ public class MovPersonaje : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("EscenaLose");
+        MusicManager.instance.DetenerSonido();
     }
 }
