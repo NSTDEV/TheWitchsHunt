@@ -817,10 +817,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuOpciones
       objectReference: {fileID: 0}
-    - target: {fileID: 664944062347211304, guid: d54ff5e433597db48b101dd50f7dc172, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4848039176676572076, guid: d54ff5e433597db48b101dd50f7dc172, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -901,22 +897,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5372542206941567157, guid: d54ff5e433597db48b101dd50f7dc172, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5372542206941567157, guid: d54ff5e433597db48b101dd50f7dc172, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8126116487098061298, guid: d54ff5e433597db48b101dd50f7dc172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1790118091}
-    - target: {fileID: 8126116487098061298, guid: d54ff5e433597db48b101dd50f7dc172, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
+    - target: {fileID: 8472106655171398618, guid: d54ff5e433597db48b101dd50f7dc172, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 549950177}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
