@@ -8,22 +8,20 @@ public class NewBehaviourScript : MonoBehaviour
    // Nombre de la escena a la que vas a cambiar
     public string nombreEscena;
     // Tiempo de espera en segundos
-    public float tiempoEspera = 6f;
+    public float tiempoEspera = 2f;
 
     // Este método se puede llamar desde el botón
-    public void AlPresionarBoton(string nombre)
+    public void AlPresionarBoton()
     {
-        StartCoroutine(EspereYCambie(nombre));
+        StartCoroutine(EspereYCambie());
     }
 
-    private IEnumerator EspereYCambie(string nombre)
+    private IEnumerator EspereYCambie()
     {
         // Espera el tiempo indicado
         yield return new WaitForSeconds(tiempoEspera);
 
         // Cambia de escena
-
-    SceneManager.LoadScene(nombre);
-
+        SceneManager.LoadScene(nombreEscena);
     }
 }
