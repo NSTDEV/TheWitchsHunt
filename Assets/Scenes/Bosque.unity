@@ -2378,10 +2378,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pausa
       objectReference: {fileID: 0}
-    - target: {fileID: 3152738256994485046, guid: 25f610676a786da42a657d627aee5d87, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3655546753717931007, guid: 25f610676a786da42a657d627aee5d87, type: 3}
       propertyPath: m_Pivot.x
       value: 0
