@@ -112,8 +112,18 @@ public class MovPersonaje : MonoBehaviour
         if (collision.collider.CompareTag("Enemigo"))
             StartCoroutine(Morir());
 
-        if (collision.collider.CompareTag("Cueva"))
+        if (collision.collider.CompareTag("Cueva") && ControlLlaves.instance.llavesActuales >= 1)
             SceneManager.LoadScene("Cueva");
+
+        if (collision.collider.CompareTag("Exterior") && ControlLlaves.instance.llavesActuales >= 2)
+        {
+            SceneManager.LoadScene("BosqueParte2");
+        }
+
+        if (collision.collider.CompareTag("Salida") && ControlLlaves.instance.llavesActuales >= 3)
+        {
+            SceneManager.LoadScene("EscenaWin");
+        }
     }
 
     private IEnumerator Morir()
