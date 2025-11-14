@@ -135,7 +135,6 @@ public class MovPersonaje : MonoBehaviour
 {
    if (other.CompareTag("Llave"))
     {
-        Debug.Log("COLLAR DETECTADO → EVENTO ENVIADO (Trigger)");
         OnCollarCollision?.Invoke();
     }
 }
@@ -154,7 +153,6 @@ public class MovPersonaje : MonoBehaviour
         animator.SetTrigger("Muerte");
 
         yield return new WaitForSeconds(1.5f);
-
         SceneManager.LoadScene("EscenaLose");
     }
 }
