@@ -12,7 +12,7 @@ public class CuevaBrujaIA : MonoBehaviour
     private Transform target;
     private NavMeshAgent agent;
 
-    private bool canChase = false;   // 🔹 Nueva variable: control de persecución
+    private bool canChase = false;
         //Bruja mod
     private void Awake()
     {
@@ -33,12 +33,10 @@ public class CuevaBrujaIA : MonoBehaviour
         {
             target = targetObject.transform;
 
-            // 🔹 Nos suscribimos al trigger del personaje
             MovPersonaje trigger = target.GetComponent<MovPersonaje>();
             if (trigger != null)
             {
                 trigger.OnCollarCollision += ActivateChase;
-                
             }
         }
         else
@@ -86,8 +84,7 @@ public class CuevaBrujaIA : MonoBehaviour
    private IEnumerator Perseguir()
     {
         yield return new WaitForSeconds(2f);
-        canChase = true;  // 🔹 Ahora la bruja empieza a perseguir
+        canChase = true;
         agent.enabled = true;
-
     }
 }
