@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
+[RequireComponent(typeof(Collider2D))]
 public class EnemyGrainTrigger : MonoBehaviour
 {
     [Header("Post-proceso (Grain)")]
@@ -14,9 +15,19 @@ public class EnemyGrainTrigger : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Color normalColor = Color.black;
     public Color alertColor = new Color(0.6f, 0.1f, 0.1f);
+
     private FilmGrain filmGrain;
     private float targetIntensity;
     private Color targetColor;
+
+    [Header("DEBUG")]
+    public Collider2D triggerCollider;
+
+    void Reset()
+    {
+        triggerCollider = GetComponent<Collider2D>();
+        triggerCollider.isTrigger = true;
+    }
 
     void Start()
     {
@@ -31,6 +42,9 @@ public class EnemyGrainTrigger : MonoBehaviour
             spriteRenderer.color = normalColor;
             targetColor = normalColor;
         }
+
+        if (triggerCollider == null)
+            triggerCollider = GetComponent<Collider2D>();
     }
 
     void Update()
@@ -56,6 +70,8 @@ public class EnemyGrainTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other == null || triggerCollider == null) return;
+
         if (other.CompareTag("Enemigo"))
         {
             targetIntensity = alertGrain;
@@ -65,6 +81,8 @@ public class EnemyGrainTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (other == null || triggerCollider == null) return;
+
         if (other.CompareTag("Enemigo"))
         {
             targetIntensity = normalGrain;

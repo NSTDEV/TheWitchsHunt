@@ -36,6 +36,7 @@ public class Pause : MonoBehaviour
         {
             a.Pause();
         }
+
     }
 
     public void Reanudar()
@@ -50,18 +51,23 @@ public class Pause : MonoBehaviour
             a.UnPause();
         }
     }
-     
 
     public void Reiniciar()
     {
         juegoPausado = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ControlLlaves.instance.llavesActuales = 0;
+        ControlCollares.instance.collaresActuales = 0;
     }
+
     public void VolverMenu(string nombre)
     {
         SceneManager.LoadScene(nombre);
+        ControlLlaves.instance.llavesActuales = 0;
+        ControlCollares.instance.collaresActuales = 0;
     }
+
     public void Cerrar()
     {
         Application.Quit();
