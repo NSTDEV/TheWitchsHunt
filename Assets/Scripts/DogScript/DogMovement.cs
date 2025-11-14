@@ -7,6 +7,7 @@ public class DogMovement : MonoBehaviour
 {
     private Transform Player;
     [SerializeField] private float movementSpeed = 5f;
+      [SerializeField] private float stopDistance = 1.5f;
 
     //private UnityEngine.AI.NavMeshAgent agent;
     private NavMeshAgent agent;
@@ -31,10 +32,30 @@ public class DogMovement : MonoBehaviour
     private void Update()
     {
         //agent.SetDestination(Player.position);
-          if (navigationActive)
+        /* if (navigationActive)
         {
             agent.SetDestination(Player.position);
+        }*/
+
+        if (navigationActive && Player != null)
+        {
+            float distance = Vector3.Distance(transform.position, Player.position);
+
+            if (distance > stopDistance)
+            {
+                // 🔹 Calculamos un punto a la distancia adecuada
+                Vector3 direction = (Player.position - transform.position).normalized;
+                Vector3 targetPos = Player.position - direction * stopDistance;
+
+                agent.SetDestination(targetPos);
+            }
+            else
+            {
+                // 🔹 Si ya está a la distancia deseada, frena
+                agent.ResetPath();
+            }
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
