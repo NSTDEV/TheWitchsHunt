@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;   // ← IMPORTANTE
 
 public class ControlCollares : MonoBehaviour
 {
@@ -38,6 +39,11 @@ public class ControlCollares : MonoBehaviour
 
     void Update()
     {
+        // 🚫 NO FUNCIONA EL COLLAR EN LA ESCENA “Cueva”
+        if (SceneManager.GetActiveScene().name == "Cueva")
+            return;
+
+        // ✔️ Funciona normalmente en cualquier otra escena
         if (Input.GetKeyDown(KeyCode.J) && collaresActuales > 0)
         {
             GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
