@@ -11,6 +11,8 @@ public class ControlCollares : MonoBehaviour
     public int collaresActuales = 0;
     public TextMeshProUGUI textoUI;
 
+    public AudioSource sonidoCollar; // 🔊 AUDIO DEL COLLAR
+
     void Awake()
     {
         if (instance != null && instance != this)
@@ -38,9 +40,14 @@ public class ControlCollares : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) && collaresActuales > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && collaresActuales > 0)
         {
+
+            // 🔊 REPRODUCIR SONIDO DEL COLLAR 
+            if (sonidoCollar != null) 
+            sonidoCollar.Play();
             collaresActuales--;
+
             ActualizarTexto();
 
             if (RangeControll.instance != null && RangeControll.instance.HayEnemigos())
