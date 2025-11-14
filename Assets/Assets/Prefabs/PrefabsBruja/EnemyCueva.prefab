@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -2079041524532888961}
   - component: {fileID: -3821536034698383246}
   - component: {fileID: 1706969148589030695}
+  - component: {fileID: 5945146633668491664}
   m_Layer: 0
   m_Name: EnemyCueva
   m_TagString: Enemigo
@@ -188,7 +189,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7091189528346747668}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76f033e83ca65284fba22bc1e3c47b7c, type: 3}
   m_Name: 
@@ -291,3 +292,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5945146633668491664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091189528346747668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c713915deeb084d91fc927c1a0c97e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Personaje
+  witchSpeed: 2.5

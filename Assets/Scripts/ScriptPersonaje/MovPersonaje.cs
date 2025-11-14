@@ -13,6 +13,8 @@ public class MovPersonaje : MonoBehaviour
     private bool isDead = false;
     private Vector2 lastMoveDir = Vector2.down;
 
+     public System.Action OnCollarCollision;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -109,6 +111,10 @@ public class MovPersonaje : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.collider.CompareTag("Collar"))
+        {
+            OnCollarCollision?.Invoke();  // 🔹 Avisamos a la bruja
+        }
         if (collision.collider.CompareTag("Enemigo"))
             StartCoroutine(Morir());
 
@@ -125,6 +131,14 @@ public class MovPersonaje : MonoBehaviour
             SceneManager.LoadScene("EscenaWin");
         }
     }
+     private void OnTriggerEnter2D(Collider2D other)
+{
+   if (other.CompareTag("Collar"))
+    {
+        Debug.Log("COLLAR DETECTADO → EVENTO ENVIADO (Trigger)");
+        OnCollarCollision?.Invoke();
+    }
+}
 
     private IEnumerator Morir()
     {
