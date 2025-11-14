@@ -57,12 +57,15 @@ public class Pause : MonoBehaviour
         juegoPausado = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        print("Enzo puto");
+        ControlLlaves.instance.llavesActuales = 0;
+        ControlCollares.instance.collaresActuales = 0;
     }
 
     public void VolverMenu(string nombre)
     {
         SceneManager.LoadScene(nombre);
+        ControlLlaves.instance.llavesActuales = 0;
+        ControlCollares.instance.collaresActuales = 0;
     }
 
     public void Cerrar()

@@ -4,21 +4,23 @@ using System.Collections;
 
 public class ControlCollares : MonoBehaviour
 {
+    public static ControlCollares instance; // 🔹 acceso global
+    
     public int maxCollares = 10;
     public int collaresActuales = 0;
     public TextMeshProUGUI textoUI;
 
-    //Header("Raycast y distancia")]
-    [SerializeField] private Transform jugador;        // referencia al jugador
-    [SerializeField] private float distanciaMax = 5f; // ajustable en el Inspector
-    [SerializeField] private LayerMask enemigoLayer;   // para filtrar solo enemigos en el raycast
-
-    
-
-void Start()
+    void Awake()
     {
-        ActualizarTexto();
+        // 🔹 Si ya hay una instancia, eliminar duplicado
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
+        instance = this;
+        DontDestroyOnLoad(gameObject); // 🔹 se mantiene entre escenas
     }
 
     public void RecogerCollar()
@@ -28,55 +30,28 @@ void Start()
             collaresActuales++;
             ActualizarTexto();
         }
+        else
+        {
+            Debug.Log("No puedo llevar más collares");
+        }
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.J) && collaresActuales > 0)
         {
-            GameObject enemigoCercano = BuscarEnemigoCercano();
-            if (enemigoCercano != null)
-            {
-                
-                collaresActuales--;
-                ActualizarTexto();
-                StartCoroutine(Blink(enemigoCercano));
-            }
-            /*GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
+            GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
             foreach (GameObject enemigo in enemigos)
             {
                 if (enemigo.activeInHierarchy)
                 {
                     collaresActuales--;
                     ActualizarTexto();
-
-
                     StartCoroutine(Blink(enemigo));
                     break;
                 }
-            }*/
-        }
-    }
-
-    /***********/
-    GameObject BuscarEnemigoCercano()
-    {
-        GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
-        foreach (GameObject enemigo in enemigos)
-        {
-            if (enemigo.activeInHierarchy)
-            {
-                float distancia = Vector2.Distance(jugador.position, enemigo.transform.position);
-                if (distancia <= distanciaMax)
-                {
-                    // Opcional: trazar raycast para depuración visual
-                    Debug.DrawLine(jugador.position, enemigo.transform.position, Color.red, 0.5f);
-
-                    return enemigo;
-                }
             }
         }
-        return null;
     }
 
     IEnumerator Blink(GameObject enemigo)
@@ -90,7 +65,6 @@ void Start()
         yield return new WaitForSeconds(1f);
         enemigo.SetActive(false);
     }
-
 
     void ActualizarTexto()
     {
