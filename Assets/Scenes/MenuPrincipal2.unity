@@ -1911,7 +1911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nombreEscena: Bosque
-  tiempoEspera: 6
+  tiempoEspera: 4
 --- !u!4 &1737570561
 Transform:
   m_ObjectHideFlags: 0
