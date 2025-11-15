@@ -8,8 +8,6 @@ public class ControlCollares : MonoBehaviour
 {
     public static ControlCollares instance;
 
-<<<<<<< Updated upstream
-=======
     [Header("Sistema de carga")]
     public bool cargado = true;
     public float tiempoRecarga = 10f;
@@ -23,7 +21,6 @@ public class ControlCollares : MonoBehaviour
 
     string[] escenasBloqueadas = { "MenuPrincipal2", "EscenaWin", "EscenaLose", "Cueva" };
 
->>>>>>> Stashed changes
     void Awake()
     {
         if (instance != null && instance != this)
@@ -91,26 +88,6 @@ public class ControlCollares : MonoBehaviour
 
     void Update()
     {
-<<<<<<< Updated upstream
-        if (Input.GetKeyDown(KeyCode.J) && collaresActuales > 0)
-        {
-            collaresActuales--;
-            ActualizarTexto();
-
-            if (RangeControll.instance != null && RangeControll.instance.HayEnemigos())
-            {
-                GameObject enemigo = RangeControll.instance.ObtenerPrimerEnemigo();
-
-                if (enemigo != null)
-                {
-                    StartCoroutine(Blink(enemigo));
-                }
-            }
-            else
-            {
-                Debug.Log("No hay enemigos en rango, pero se gastó 1 collar.");
-            }
-=======
         if (Input.GetKeyDown(KeyCode.Space))
             IntentarUsarCollar();
     }
@@ -121,7 +98,6 @@ public class ControlCollares : MonoBehaviour
         {
             Debug.Log("❌ Collar no está listo");
             return;
->>>>>>> Stashed changes
         }
 
         DispararCollar();
