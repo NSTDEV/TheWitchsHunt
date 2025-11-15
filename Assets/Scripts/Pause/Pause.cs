@@ -55,6 +55,7 @@ public class Pause : MonoBehaviour
         juegoPausado = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ControlLlaves.instance.llavesActuales = 0;
     }
 
     public void VolverMenu(string nombre)
