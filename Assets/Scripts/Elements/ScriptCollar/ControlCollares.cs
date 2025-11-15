@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using UnityEngine.SceneManagement;
@@ -6,13 +7,23 @@ using UnityEngine.SceneManagement;
 public class ControlCollares : MonoBehaviour
 {
     public static ControlCollares instance;
-    
-    public int maxCollares = 10;
-    public int collaresActuales = 0;
-    public TextMeshProUGUI textoUI;
 
-    public AudioSource sonidoCollar; // 🔊 AUDIO DEL COLLAR
+<<<<<<< Updated upstream
+=======
+    [Header("Sistema de carga")]
+    public bool cargado = true;
+    public float tiempoRecarga = 10f;
+    private bool recargando = false;
 
+    [Header("UI")]
+    public Image iconoCollar;
+    public TextMeshProUGUI contadorUI;
+
+    public AudioSource sonidoCollar;
+
+    string[] escenasBloqueadas = { "MenuPrincipal2", "EscenaWin", "EscenaLose", "Cueva" };
+
+>>>>>>> Stashed changes
     void Awake()
     {
         if (instance != null && instance != this)
@@ -25,29 +36,65 @@ public class ControlCollares : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void RecogerCollar()
+    void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
+    void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (collaresActuales < maxCollares)
+        bool bloqueada = false;
+        foreach (string s in escenasBloqueadas)
+            if (scene.name == s) bloqueada = true;
+
+        if (bloqueada)
         {
-            collaresActuales++;
-            ActualizarTexto();
+            Resetear();
+            OcultarUI();
         }
         else
         {
-            Debug.Log("No puedo llevar más collares");
+            MostrarUI();
         }
+
+        ActualizarUI();
+    }
+
+    void Resetear()
+    {
+        cargado = true;
+        recargando = false;
+        StopAllCoroutines();
+    }
+
+    void OcultarUI()
+    {
+        if (iconoCollar != null)
+        {
+            cargado = false;
+            iconoCollar.transform.gameObject.SetActive(false);
+        }
+
+        if (contadorUI != null)
+            contadorUI.gameObject.SetActive(false);
+    }
+
+    void MostrarUI()
+    {
+        if (iconoCollar != null)
+        {
+            cargado = true;
+            iconoCollar.transform.gameObject.SetActive(true);
+        }
+
+        if (contadorUI != null)
+            contadorUI.gameObject.SetActive(true);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && collaresActuales > 0)
+<<<<<<< Updated upstream
+        if (Input.GetKeyDown(KeyCode.J) && collaresActuales > 0)
         {
-
-            // 🔊 REPRODUCIR SONIDO DEL COLLAR 
-            if (sonidoCollar != null) 
-            sonidoCollar.Play();
             collaresActuales--;
-
             ActualizarTexto();
 
             if (RangeControll.instance != null && RangeControll.instance.HayEnemigos())
@@ -63,26 +110,94 @@ public class ControlCollares : MonoBehaviour
             {
                 Debug.Log("No hay enemigos en rango, pero se gastó 1 collar.");
             }
+=======
+        if (Input.GetKeyDown(KeyCode.Space))
+            IntentarUsarCollar();
+    }
+
+    void IntentarUsarCollar()
+    {
+        if (!cargado || recargando)
+        {
+            Debug.Log("❌ Collar no está listo");
+            return;
+>>>>>>> Stashed changes
         }
+
+        DispararCollar();
+    }
+
+    void DispararCollar()
+    {
+        cargado = false;
+
+        if (sonidoCollar != null)
+            sonidoCollar.Play();
+
+        if (RangeControll.instance != null && RangeControll.instance.HayEnemigos())
+        {
+            GameObject enemigo = RangeControll.instance.ObtenerPrimerEnemigo();
+            if (enemigo != null)
+                StartCoroutine(Blink(enemigo));
+        }
+        else
+        {
+            Debug.Log("📌 Collar gastado, pero NO había enemigo en rango");
+        }
+
+        StartCoroutine(Recargar());
+        ActualizarUI();
+    }
+
+    IEnumerator Recargar()
+    {
+        recargando = true;
+
+        float restante = tiempoRecarga;
+
+        while (restante > 0f)
+        {
+            restante -= Time.deltaTime;
+
+            if (contadorUI != null)
+                contadorUI.text = Mathf.Ceil(restante).ToString();
+
+            if (iconoCollar != null)
+            {
+                Color c = iconoCollar.color;
+                c.a = 0.3f;
+                iconoCollar.color = c;
+            }
+
+            yield return null;
+        }
+
+        cargado = true;
+        recargando = false;
+        ActualizarUI();
     }
 
     IEnumerator Blink(GameObject enemigo)
     {
         Animator anim = enemigo.GetComponent<Animator>();
         if (anim != null)
-        {
             anim.Play("EnemigoGolpeado");
-        }
-        
+
         yield return new WaitForSeconds(1f);
+
         enemigo.SetActive(false);
     }
 
-    void ActualizarTexto()
+    void ActualizarUI()
     {
-        if (textoUI != null)
+        if (contadorUI != null)
+            contadorUI.text = cargado ? "" : tiempoRecarga.ToString("0");
+
+        if (iconoCollar != null)
         {
-            textoUI.text = " : " + collaresActuales;
+            Color c = iconoCollar.color;
+            c.a = cargado ? 1f : 0.3f;
+            iconoCollar.color = c;
         }
     }
 }
