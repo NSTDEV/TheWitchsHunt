@@ -14,6 +14,7 @@ public class MovPersonaje : MonoBehaviour
     private Vector2 lastMoveDir = Vector2.down;
 
      public System.Action OnCollarCollision;
+    public Joystick joystick;
 
     void Start()
     {
@@ -26,8 +27,8 @@ public class MovPersonaje : MonoBehaviour
     {
         if (isDead) return;
 
-        float inputX = Input.GetAxis("Horizontal");
-        float inputY = Input.GetAxis("Vertical");
+        float inputX = joystick.Horizontal;
+        float inputY = joystick.Vertical;
         Vector2 inputDir = new Vector2(inputX, inputY);
 
         if (inputDir.magnitude > 1)

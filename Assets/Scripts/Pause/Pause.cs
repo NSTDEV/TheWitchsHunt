@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject Pausa;
+    [SerializeField] private GameObject bottonPause;
     private bool juegoPausado = false;
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        /*if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(juegoPausado)
             {
@@ -20,12 +21,14 @@ public class Pause : MonoBehaviour
             {
                 Pausar();
             }
-        }
+        }*/
+        
     }
 
     public void Pausar()
     { 
         if (Time.timeScale != 1f) { return; }
+        bottonPause.SetActive(false);
         juegoPausado = true;
         Pausa.SetActive(true);
         Time.timeScale = 0f;
@@ -41,6 +44,7 @@ public class Pause : MonoBehaviour
     {   
         juegoPausado = false;
         Pausa.SetActive(false);
+        bottonPause.SetActive(true);
         Time.timeScale = 1f;
 
         AudioSource[] audios = FindObjectsOfType<AudioSource>();

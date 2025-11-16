@@ -2182,6 +2182,14 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1825909642}
+    - target: {fileID: 7338861147900432654, guid: 25f610676a786da42a657d627aee5d87, type: 3}
+      propertyPath: bottonPause
+      value: 
+      objectReference: {fileID: 968765990}
+    - target: {fileID: 7823435910463687329, guid: 25f610676a786da42a657d627aee5d87, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8156863
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2191,6 +2199,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6794220138809073045, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
   m_PrefabInstance: {fileID: 1901337505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &968765990 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8222711271660434980, guid: 25f610676a786da42a657d627aee5d87, type: 3}
+  m_PrefabInstance: {fileID: 955380191}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &973204069 stripped
 Transform:
@@ -12139,7 +12152,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d1559c797b5c2cd4988f0d0c2c762007, type: 3}
     - target: {fileID: 1645816780489345873, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 7.8049355
+      value: 7.363272
       objectReference: {fileID: 0}
     - target: {fileID: 2115892377229748715, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: necklaceSound
@@ -66031,6 +66044,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 798053680}
   m_SourcePrefab: {fileID: 100100000, guid: c1db9b6d0d5970044a2d5f0f3e7b6f78, type: 3}
+--- !u!114 &1302665727 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6412407672334211323, guid: 39ed85433feec714ebb0abcc920be2e5, type: 3}
+  m_PrefabInstance: {fileID: 6351900915977710664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1332855396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67065,6 +67089,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personaje
       objectReference: {fileID: 0}
+    - target: {fileID: 4268479298940593161, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1302665727}
     - target: {fileID: 5255660133590125735, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
       propertyPath: m_Radius
       value: 3
@@ -68055,18 +68083,6 @@ PrefabInstance:
     - target: {fileID: 4534915789900483532, guid: 39ed85433feec714ebb0abcc920be2e5, type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 7608211957869218957, guid: 39ed85433feec714ebb0abcc920be2e5, type: 3}
-      propertyPath: distanciaMax
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7608211957869218957, guid: 39ed85433feec714ebb0abcc920be2e5, type: 3}
-      propertyPath: collaresActuales
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7608211957869218957, guid: 39ed85433feec714ebb0abcc920be2e5, type: 3}
-      propertyPath: enemigoLayer.m_Bits
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
