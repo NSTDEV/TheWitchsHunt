@@ -1,15 +1,21 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ControlLlaves : MonoBehaviour
 {
-    public static ControlLlaves instance; // 🔹 acceso global
+    public static ControlLlaves instance;
+
     public int maxLlaves = 10;
     public int llavesActuales = 0;
+
     public TextMeshProUGUI textoLlavesUI;
+
     [SerializeField] private AudioClip keySound1;
     [SerializeField] private AudioClip keySound2;
     [SerializeField] private AudioClip keySound3;
+
+    string[] escenasBloqueadas = { "MenuPrincipal2", "EscenaWin", "EscenaLose" };
 
     void Awake()
     {
@@ -23,15 +29,58 @@ public class ControlLlaves : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Update()
+    void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.E) && llavesActuales > 0)
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        bool esBloqueada = false;
+
+        foreach (string s in escenasBloqueadas)
         {
-            llavesActuales--;
-            ActualizarTexto();
-            SonidoLlaves();
-            Debug.Log("Se usó una llave");
+            if (scene.name == s)
+            {
+                esBloqueada = true;
+                break;
+            }
         }
+
+        if (esBloqueada)
+        {
+            ResetearLlaves();
+            OcultarUI();
+        }
+        else
+        {
+            MostrarUI();
+        }
+
+        ActualizarTexto();
+    }
+
+    void ResetearLlaves()
+    {
+        Debug.Log("ControlLlaves → Reiniciando porque se cargó menú o final.");
+        llavesActuales = 0;
+    }
+
+    void OcultarUI()
+    {
+        if (textoLlavesUI != null)
+            textoLlavesUI.transform.gameObject.SetActive(false);
+    }
+
+    void MostrarUI()
+    {
+        if (textoLlavesUI != null)
+            textoLlavesUI.transform.gameObject.SetActive(true);
     }
 
     public void RecogerLlave()
@@ -40,7 +89,6 @@ public class ControlLlaves : MonoBehaviour
         {
             llavesActuales++;
             ActualizarTexto();
-            Debug.Log("Llaves: " + llavesActuales);
         }
         else
         {

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject Pausa;
-   // [SerializeField] private GameObject Panel;
     private bool juegoPausado = false;
 
     private void Update()
@@ -36,7 +35,6 @@ public class Pause : MonoBehaviour
         {
             a.Pause();
         }
-
     }
 
     public void Reanudar()
@@ -58,14 +56,11 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         ControlLlaves.instance.llavesActuales = 0;
-        ControlCollares.instance.collaresActuales = 0;
     }
 
     public void VolverMenu(string nombre)
     {
         SceneManager.LoadScene(nombre);
-        ControlLlaves.instance.llavesActuales = 0;
-        ControlCollares.instance.collaresActuales = 0;
     }
 
     public void Cerrar()
