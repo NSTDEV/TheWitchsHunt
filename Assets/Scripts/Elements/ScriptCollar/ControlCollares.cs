@@ -86,13 +86,15 @@ public class ControlCollares : MonoBehaviour
             contadorUI.gameObject.SetActive(true);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            IntentarUsarCollar();
-    }
+    // ❌ YA NO USAMOS TECLADO
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.Space))
+    //         IntentarUsarCollar();
+    // }
 
-    void IntentarUsarCollar()
+    // ✔ MÉTODO PÚBLICO PARA QUE LO USE EL BOTÓN DEL EDITOR
+    public void IntentarUsarCollar()
     {
         if (!cargado || recargando)
         {

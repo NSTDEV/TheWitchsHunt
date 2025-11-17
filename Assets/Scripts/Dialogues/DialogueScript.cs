@@ -23,15 +23,24 @@ public class DialogueScript : MonoBehaviour
         audioSource.clip = playerVoice;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (didDialogueStart && Input.GetButtonDown("Fire1"))
+        if (!didDialogueStart) return;
+
+        bool input = Input.GetMouseButtonDown(0);
+
+        // Celular
+        if (Input.touchCount > 0)
+        {
+            Touch t = Input.GetTouch(0);
+            if (t.phase == TouchPhase.Began)
+                input = true;
+        }
+
+        if (input)
         {
             if (dialogueText.text == dialogueLines[lineIndex])
-            {
                 NextDialogueLine();
-            }
             else
             {
                 StopAllCoroutines();

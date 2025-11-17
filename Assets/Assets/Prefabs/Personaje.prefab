@@ -718,6 +718,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5391898477625953420, guid: 55bd0759189cbe648a96dcc8536aaa5d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 98410821, guid: ec42ebb3e0c4d0042b0f2dd35b86cdd9, type: 3}
+    - target: {fileID: 5391898477625953423, guid: 55bd0759189cbe648a96dcc8536aaa5d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391898477625953423, guid: 55bd0759189cbe648a96dcc8536aaa5d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391898479455733898, guid: 55bd0759189cbe648a96dcc8536aaa5d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 475503679, guid: ec42ebb3e0c4d0042b0f2dd35b86cdd9, type: 3}
+    - target: {fileID: 5391898479455735669, guid: 55bd0759189cbe648a96dcc8536aaa5d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391898479455735669, guid: 55bd0759189cbe648a96dcc8536aaa5d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 8026032846566712314, guid: 55bd0759189cbe648a96dcc8536aaa5d, type: 3}
       propertyPath: m_Name
       value: Joystick
