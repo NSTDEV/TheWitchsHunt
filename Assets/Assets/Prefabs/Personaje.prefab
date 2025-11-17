@@ -507,8 +507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalVolume: {fileID: 4799236353930350941}
-  normalGrain: 0.15
-  alertGrain: 0.6
+  normalGrain: 0.1
+  alertGrain: 0.5
   smoothSpeed: 3
   triggerCollider: {fileID: 5255660133590125735}
 --- !u!58 &5255660133590125735
