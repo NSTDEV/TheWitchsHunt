@@ -21310,8 +21310,8 @@ PrefabInstance:
       value: "\u201C\xDAltima entrada\u201D\r\nMe ofrecieron trabajo en las minas,
         limpieza y comida\u2026\r\nSoy la \xFAnica mujer aqu\xED, no hay nadie m\xE1s???\r\nEscucho
         sus voces, las risas de los mineros, entre los t\xFAneles\u2026\r\nMe miran
-        de forma rara\u2026 no deb\xED venir aqu\xED.\r\n\r\n\nPresiona Espacio para
-        salir"
+        de forma rara\u2026 no deb\xED venir aqu\xED.\r\n\r\n\n\nClick izquierdo
+        para salir"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -41510,7 +41510,7 @@ PrefabInstance:
       propertyPath: textoNota
       value: "\u201CAusencia\u201D\r\nHoy el silencio pesa m\xE1s que nunca\u2026\r\nLa
         casa ya no tiene color, el bosque tampoco, Su cama est\xE1 vac\xEDa\u2026\r\nA\xFAn
-        puedo oler la tinta de sus dibujos.\r\n\nPresiona Espacio para salir"
+        puedo oler la tinta de sus dibujos.\r\n\n\nClick izquierdo para salir"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -42134,7 +42134,7 @@ PrefabInstance:
         est\xE1 llamando\u2026\r\nPromete que el dolor terminar\xE1 si lo sigo\u2026\r\nLos
         mineros van a pagar. Alla abajo nadie podr\xE1 hacerme da\xF1o otra vez.\r\nNo
         puedo escapar, no quiero escapar\u2026\r\nSi esta sombra me reclama\u2026
-        ll\xE9vame\u2026\r\nAl fin, dejar\xE9 de ser yo\u2026\r\n\r\nPresiona Espacio
+        ll\xE9vame\u2026\r\nAl fin, dejar\xE9 de ser yo\u2026\r\n\r\n\nClick izquierdo
         para salir"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
@@ -58721,8 +58721,8 @@ PrefabInstance:
       propertyPath: textoNota
       value: "Culpa\u201D\r\nDicen que la desgracia cae sobre quienes manchan la
         casa con pecado.\r\nLa se\xF1ora no me mira.\r\nMe pidi\xF3 que me marche
-        antes del amanecer.\r\nPero\u2026 \xBFad\xF3nde voy a ir?\r\n\r\n\nPresiona
-        Espacio para salir"
+        antes del amanecer.\r\nPero\u2026 \xBFad\xF3nde voy a ir?\r\n\r\n\n\nClick
+        izquierdo para salir"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
