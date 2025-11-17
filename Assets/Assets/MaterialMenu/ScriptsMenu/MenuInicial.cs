@@ -11,9 +11,11 @@ public class MenuInicial : MonoBehaviour
 
    public void Start( )
     {
+      Time.timeScale = 1f;
       music = GetComponent<AudioSource>();
     }
-     public void CambiarEscena(string nombre){
+   
+   public void CambiarEscena(string nombre){
 
     SceneManager.LoadScene(nombre);
 
