@@ -9,22 +9,6 @@ public class Pause : MonoBehaviour
     [SerializeField] private GameObject bottonPause;
     private bool juegoPausado = false;
 
-    private void Update()
-    {
-        /*if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(juegoPausado)
-            {
-                Reanudar();
-            }
-            else
-            {
-                Pausar();
-            }
-        }*/
-        
-    }
-
     public void Pausar()
     { 
         if (Time.timeScale != 1f) { return; }
