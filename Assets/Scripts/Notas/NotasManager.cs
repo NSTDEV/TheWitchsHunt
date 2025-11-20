@@ -45,7 +45,7 @@ public class NotasManager : MonoBehaviour
 
     void Update()
     {
-        if (notaAbierta && Input.GetButtonDown("Fire1"))
+        if (notaAbierta && Input.GetKeyDown(KeyCode.Space))
         {
             CerrarNota();
         }

@@ -1,18 +1,20 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ControlCollares : MonoBehaviour
 {
-    public static ControlCollares instance; // 🔹 acceso global
+    public static ControlCollares instance;
     
     public int maxCollares = 10;
     public int collaresActuales = 0;
     public TextMeshProUGUI textoUI;
 
+    public AudioSource sonidoCollar; // 🔊 AUDIO DEL COLLAR
+
     void Awake()
     {
-        // 🔹 Si ya hay una instancia, eliminar duplicado
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -20,7 +22,7 @@ public class ControlCollares : MonoBehaviour
         }
 
         instance = this;
-        DontDestroyOnLoad(gameObject); // 🔹 se mantiene entre escenas
+        DontDestroyOnLoad(gameObject);
     }
 
     public void RecogerCollar()
@@ -38,18 +40,28 @@ public class ControlCollares : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) && collaresActuales > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && collaresActuales > 0)
         {
-            GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
-            foreach (GameObject enemigo in enemigos)
+
+            // 🔊 REPRODUCIR SONIDO DEL COLLAR 
+            if (sonidoCollar != null) 
+            sonidoCollar.Play();
+            collaresActuales--;
+
+            ActualizarTexto();
+
+            if (RangeControll.instance != null && RangeControll.instance.HayEnemigos())
             {
-                if (enemigo.activeInHierarchy)
+                GameObject enemigo = RangeControll.instance.ObtenerPrimerEnemigo();
+
+                if (enemigo != null)
                 {
-                    collaresActuales--;
-                    ActualizarTexto();
                     StartCoroutine(Blink(enemigo));
-                    break;
                 }
+            }
+            else
+            {
+                Debug.Log("No hay enemigos en rango, pero se gastó 1 collar.");
             }
         }
     }

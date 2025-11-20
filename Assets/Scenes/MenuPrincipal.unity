@@ -374,6 +374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8ef1fce0015474391b7f96fe3fa6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickAudio: {fileID: 0}
+  switchAudio: {fileID: 0}
 --- !u!114 &549950177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,7 +388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23a89f9b0583574c8c1b12b338802d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioMixer: {fileID: 24100000, guid: a2a8112697db8ba4ca2c1735f680b86a, type: 2}
+  audioMixer: {fileID: 0}
+  volumeParam: Volumen
 --- !u!1 &576200321
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +854,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Scene
+          m_StringArgument: Bosque
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &833438845
