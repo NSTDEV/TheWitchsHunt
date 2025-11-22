@@ -24,7 +24,7 @@ public class MovPersonaje : MonoBehaviour
 
     void Update()
     {
-        if (isDead || Time.timeScale != 1) return;
+        if (isDead) return;
 
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
