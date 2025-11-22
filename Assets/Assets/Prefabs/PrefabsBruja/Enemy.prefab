@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2079041524532888961}
   - component: {fileID: -3821536034698383246}
   - component: {fileID: 1706969148589030695}
-  - component: {fileID: 6442182875525171587}
+  - component: {fileID: 1962018574174972146}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemigo
@@ -214,14 +214,14 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 0
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 10
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 1
+  BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -292,7 +292,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6442182875525171587
+--- !u!114 &1962018574174972146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7091189528346747668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b963fddbde00c7945b140a370410b5a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 27c05b4aade33694bb1947048a669e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screamDeath: {fileID: 8300000, guid: 75a6936be80a5294992eb37ff79f2d5f, type: 3}
+  screamDeath: {fileID: 8300000, guid: 33fc7b7adf87ca34886fa8b6cbb406aa, type: 3}
