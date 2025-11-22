@@ -12146,7 +12146,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d1559c797b5c2cd4988f0d0c2c762007, type: 3}
     - target: {fileID: 1645816780489345873, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 6.936328
+      value: 7.9818025
       objectReference: {fileID: 0}
     - target: {fileID: 2115892377229748715, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: necklaceSound
@@ -67372,7 +67372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2077661145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67387,8 +67387,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7091189528346747668, guid: d7321ec0f9d3a0e4b988c45d6a51c7a6, type: 3}
   spawnPoint: {fileID: 2077661147}
-  spawnMinInterval: 38
-  spawnMaxInterval: 40
+  spawnMinInterval: 18
+  spawnMaxInterval: 25
   detectionRadius: 1
   poolSize: 1
 --- !u!114 &2077661146
@@ -68130,6 +68130,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+      propertyPath: m_SceneBindings.Array.data[6].key
+      value: 
+      objectReference: {fileID: 2792867316687668860, guid: d69c79e393360f448ad9e281c7a9ecda, type: 2}
+    - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
       objectReference: {fileID: 444110894}
@@ -68144,7 +68152,7 @@ PrefabInstance:
     - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
       propertyPath: m_SceneBindings.Array.data[6].value
       value: 
-      objectReference: {fileID: 2077661144}
+      objectReference: {fileID: 614088707}
     - target: {fileID: 3896586027729551538, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
       propertyPath: UI
       value: 

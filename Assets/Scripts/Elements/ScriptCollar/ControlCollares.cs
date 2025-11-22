@@ -10,9 +10,9 @@ public class ControlCollares : MonoBehaviour
 
     [Header("Sistema de carga")]
     public bool cargado = true;
-    public float tiempoRecarga = 10f;
-    public float minTiempo = 15f;
-    public float maxTiempo = 20f;
+    public float minTiempo = 20f;
+    public float maxTiempo = 25f;
+    private float tiempoRecarga = 10f;
     private bool recargando = false;
 
     [Header("UI")]

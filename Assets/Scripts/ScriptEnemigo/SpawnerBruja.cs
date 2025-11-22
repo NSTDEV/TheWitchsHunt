@@ -10,8 +10,8 @@ public class SpawnerBruja2 : MonoBehaviour
     public float spawnMinInterval = 18f;
     public float spawnMaxInterval = 25f;
     private float spawnInterval;
-    public float detectionRadius = 1f; // para coomprobar colisiones con "Bosque"
-    public int poolSize = 10; // cantidad e enemigos
+    public float detectionRadius = 1f;
+    public int poolSize = 10;
 
     private List<GameObject> enemyPool;
     private void Awake()

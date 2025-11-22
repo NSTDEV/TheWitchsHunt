@@ -175031,8 +175031,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7091189528346747668, guid: d7321ec0f9d3a0e4b988c45d6a51c7a6, type: 3}
   spawnPoint: {fileID: 2077661147}
-  spawnMinInterval: 38
-  spawnMaxInterval: 40
+  spawnMinInterval: 18
+  spawnMaxInterval: 25
   detectionRadius: 1
   poolSize: 1
 --- !u!114 &2077661146
