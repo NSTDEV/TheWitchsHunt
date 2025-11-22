@@ -61,6 +61,8 @@ public class Pause : MonoBehaviour
 
     public void VolverMenu(string nombre)
     {
+        Destroy(ControlLlaves.instance.gameObject);
+        Destroy(ControlCollares.instance.gameObject);
         SceneManager.LoadScene(nombre);
     }
 

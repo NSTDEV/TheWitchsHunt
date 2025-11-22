@@ -5,23 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-   // Nombre de la escena a la que vas a cambiar
     public string nombreEscena;
-    // Tiempo de espera en segundos
     public float tiempoEspera = 2f;
 
-    // Este método se puede llamar desde el botón
     public void AlPresionarBoton()
     {
+        Time.timeScale = 1;
         StartCoroutine(EspereYCambie());
     }
 
     private IEnumerator EspereYCambie()
     {
-        // Espera el tiempo indicado
         yield return new WaitForSeconds(tiempoEspera);
-
-        // Cambia de escena
         SceneManager.LoadScene(nombreEscena);
     }
 }
