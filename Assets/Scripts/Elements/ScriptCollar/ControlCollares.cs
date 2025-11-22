@@ -11,6 +11,8 @@ public class ControlCollares : MonoBehaviour
     [Header("Sistema de carga")]
     public bool cargado = true;
     public float tiempoRecarga = 10f;
+    public float randMax = 20f;
+    public float randMin = 15f;
     private bool recargando = false;
 
     [Header("UI")]
@@ -106,6 +108,8 @@ public class ControlCollares : MonoBehaviour
     void DispararCollar()
     {
         cargado = false;
+
+        tiempoRecarga = Random.Range(randMin, randMax);
 
         if (sonidoCollar != null)
             sonidoCollar.Play();
