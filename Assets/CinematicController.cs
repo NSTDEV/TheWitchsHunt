@@ -10,6 +10,7 @@ public class CinematicController : MonoBehaviour
 
     [Header("Configuración")]
     public KeyCode teclaParaSaltar = KeyCode.Space;
+    public GameObject UI;
     public float delayParaMostrarMensaje = 1.5f;
 
     [Header("UI Opcional")]
@@ -38,7 +39,7 @@ public class CinematicController : MonoBehaviour
 
     void Update()
     {
-        if (!puedeSaltar) return;
+        if (!puedeSaltar || Time.timeScale != 1) return;
 
         if (Input.GetKeyDown(teclaParaSaltar))
             SaltarCinematica();
@@ -51,8 +52,10 @@ public class CinematicController : MonoBehaviour
         director.time = director.duration;
         director.Evaluate();
         director.Stop();
-        
+
+        UI.GetComponent<Animator>().Play("UIIntro", 0, 0);
         OnTimelineEnd(director);
+        Destroy(gameObject);
     }
 
     void OnTimelineEnd(PlayableDirector d)
