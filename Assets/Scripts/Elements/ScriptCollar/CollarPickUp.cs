@@ -11,12 +11,12 @@ public class CollarPickup : MonoBehaviour
             if (necklaceSound != null && SoundManager.instance != null)
                 SoundManager.instance.EjecutarSonido(necklaceSound);
 
-            if (ControlCollares.instance != null)
-                ControlCollares.instance.RecogerCollar();
-            else
-                Debug.LogError("❌ ControlLlaves.instance es NULL");
+            //if (ControlCollares.instance != null)
+            //    ControlCollares.instance.RecogerCollar();
+            //else
+            //    Debug.LogError("❌ ControlLlaves.instance es NULL");
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

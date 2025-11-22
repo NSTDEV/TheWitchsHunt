@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7971163739861977020}
   - component: {fileID: 7456669123575406103}
   - component: {fileID: 7399635058966272672}
-  - component: {fileID: 6455703695081689116}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -144,8 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2775b01e0bfb394db180c6d4cc10ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  playerTag: Personaje
   stopDistance: 0
+  movementThreshold: 0.05
+  idleToSleepTime: 2
   animator: {fileID: 2650593228313213220}
   sr: {fileID: 3314311828003687520}
 --- !u!58 &7399635058966272672
@@ -183,20 +184,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!320 &6455703695081689116
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8350793065488784347}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 68acfbb68485c244aacf79313aa47883, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings: []
-  m_ExposedReferences:
-    m_References: []

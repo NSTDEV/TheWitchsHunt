@@ -7,11 +7,11 @@ public class SpawnerBruja2 : MonoBehaviour
 {
     public GameObject enemyPrefab; 
     public Transform spawnPoint;
-    public float spawnMinInterval = 20f;
-    public float spawnMaxInterval = 30f;
+    public float spawnMinInterval = 18f;
+    public float spawnMaxInterval = 25f;
     private float spawnInterval;
-    public float detectionRadius = 1f; // para coomprobar colisiones con "Bosque"
-    public int poolSize = 10; // cantidad e enemigos
+    public float detectionRadius = 1f;
+    public int poolSize = 10;
 
     private List<GameObject> enemyPool;
     private void Awake()
@@ -29,9 +29,7 @@ public class SpawnerBruja2 : MonoBehaviour
             enemy.SetActive(false);
             enemyPool.Add(enemy);
         }
-        //InvokeRepeating("SpawnEnemy", 5f, Random.Range(spawnMinInterval, spawnMaxInterval));
-
-        InvokeRepeating("SpawnEnemy", 30f, spawnInterval);
+        InvokeRepeating("SpawnEnemy", 10f, Random.Range(spawnMinInterval, spawnMaxInterval));
     }
 
     void SpawnEnemy()
