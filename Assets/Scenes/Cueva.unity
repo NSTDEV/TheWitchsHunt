@@ -21478,6 +21478,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4956211330855981854, guid: 25f610676a786da42a657d627aee5d87, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956211330855981854, guid: 25f610676a786da42a657d627aee5d87, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Bosque
+      objectReference: {fileID: 0}
     - target: {fileID: 6656595865785057862, guid: 25f610676a786da42a657d627aee5d87, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -58467,6 +58475,10 @@ PrefabInstance:
     - target: {fileID: 4534915789900483532, guid: 39ed85433feec714ebb0abcc920be2e5, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043272200222751293, guid: 39ed85433feec714ebb0abcc920be2e5, type: 3}
+      propertyPath: llavesActuales
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
