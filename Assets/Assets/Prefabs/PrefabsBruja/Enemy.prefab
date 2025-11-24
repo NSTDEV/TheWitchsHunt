@@ -304,4 +304,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b963fddbde00c7945b140a370410b5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screamDeath: {fileID: 8300000, guid: 75a6936be80a5294992eb37ff79f2d5f, type: 3}
+  screamDeath: {fileID: 8300000, guid: b8c42f857b5e86c49a728d7bd4fa1e8c, type: 3}
