@@ -366,9 +366,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cargado: 1
-  tiempoRecarga: 10
+  minTiempo: 20
+  maxTiempo: 25
   iconoCollar: {fileID: 153461162215817068}
   contadorUI: {fileID: 7173207352218446344}
+  canvasUI: {fileID: 8861044623407431643}
   sonidoCollar: {fileID: 7123562320517081234}
 --- !u!114 &5043272200222751293
 MonoBehaviour:
