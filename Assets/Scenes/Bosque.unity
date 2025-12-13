@@ -145,7 +145,7 @@ PrefabInstance:
       value: "\u201CRuido en la colina\u201D\r\nHoy escuch\xE9 gritos en la direcci\xF3n
         de las minas\u2026\r\nLos hombres del turno de noche regresaron antes, riendo
         y bebiendo\u2026\r\nFinjo no ir esos ruidos\u2026\r\nNo debo salir cuando
-        es de noche.\n\nClick izquierdo para salir"
+        es de noche.\n\nPresiona para salir"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -421,7 +421,7 @@ PrefabInstance:
       value: "\u201CLa enfermedad\u201D\r\nEl ni\xF1o lleva d\xEDas con fiebre.\r\nLos
         doctores del pueblo no suben hasta aqu\xED.\r\nLe humedezco la frente con
         trapos fr\xEDos, pero no mejora.\r\nLa madre reza. El padre ya no viene de
-        la mina.\r\n\n\n\nClick izquierdo para salir"
+        la mina.\r\n\n\nPresiona para salir"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -1512,7 +1512,7 @@ PrefabInstance:
       value: "\u201CEl dibujo\u201D\r\nTom\xE1s me regal\xF3 un papel con dos figuras
         tomadas de la mano.\r\n\u201CEres mi amiga\u201D, escribi\xF3 con su letra
         torpe.\r\nLo guard\xE9 entre mis ropas, para no olvidar que todav\xEDa hay
-        bondad en esta casa.\r\n\n\nClick izquierdo para salir"
+        bondad en esta casa.\r\n\n\nPresiona para salir"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -12146,7 +12146,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d1559c797b5c2cd4988f0d0c2c762007, type: 3}
     - target: {fileID: 1645816780489345873, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 7.004481
+      value: 6.297428
       objectReference: {fileID: 0}
     - target: {fileID: 2115892377229748715, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: necklaceSound
@@ -66406,8 +66406,8 @@ PrefabInstance:
       value: "\u201CRutina\u201D\r\nLas ma\xF1anas son largas. Lavo la ropa, barro,
         y llevo le\xF1a a la casa.\r\nPero no se compara a la rutina del se\xF1or,
         sale temprano y llega tarde de las minas, con las botas cubiertas de polvo
-        negro.\r\nNo me quejo. Es trabajo, y tengo que acostumbrarme.\n\n\nClick
-        izquierdo para salir\r\n"
+        negro.\r\nNo me quejo. Es trabajo, y tengo que acostumbrarme.\n\n\nPresiona
+        para salir\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -66748,7 +66748,7 @@ PrefabInstance:
       value: "\u201CAquel ni\xF1o\u201D\r\nTomi me espera todas las tardes para que
         le lea un cuento.\r\nDice que le gusta mi voz, que le recuerda al viento
         entre los \xE1rboles.\r\nNo s\xE9 por qu\xE9, pero cuando sonr\xEDe, la casa
-        parece menos vac\xEDa.\r\n\n\nClick izquierdo para salir"
+        parece menos vac\xEDa.\r\n\n\nPresiona para salir"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -67718,7 +67718,7 @@ PrefabInstance:
         La se\xF1ora parece fr\xE1gil, y el peque\xF1o llamado Tomi no se separa
         de su cuaderno de dibujos.\r\nLa caba\xF1a es fr\xEDa, pero el aire del bosque
         me resulta m\xE1s amable que el de la ciudad. Creo que aqu\xED podr\xE9 quedarme
-        un buen tiempo, empezar de nuevo...\n\nClick izquierdo para salir\n\r\n"
+        un buen tiempo, empezar de nuevo...\n\nPresiona para salir\n\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -68204,6 +68204,10 @@ PrefabInstance:
     - target: {fileID: 8361152765672125115, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010985429100752678, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+      propertyPath: m_text
+      value: "Mant\xE9n presionada la pantalla para quitar la cinem\xE1tica"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -15,8 +15,14 @@ public class CinematicController : MonoBehaviour
 
     [Header("UI Opcional")]
     public GameObject mensajeSkip;
-
     bool puedeSaltar = false;
+
+    [Header("Skip por mantener pulsado")]
+    public float tiempoParaSaltar = 2.0f;
+
+    float tiempoPresionado = 0f;
+    bool presionando = false;
+
 
     void Start()
     {
@@ -41,8 +47,33 @@ public class CinematicController : MonoBehaviour
     {
         if (!puedeSaltar || Time.timeScale != 1) return;
 
-        if (Input.GetKeyDown(KeyCode.E))
-            SaltarCinematica();
+        bool inputActivo = false;
+        if (Input.GetKey(teclaParaSaltar))
+            inputActivo = true;
+
+        if (Input.touchCount > 0)
+        {
+            Touch t = Input.GetTouch(0);
+            if (t.phase == TouchPhase.Began || t.phase == TouchPhase.Stationary)
+                inputActivo = true;
+
+            if (t.phase == TouchPhase.Ended || t.phase == TouchPhase.Canceled)
+                inputActivo = false;
+        }
+
+        if (inputActivo)
+        {
+            tiempoPresionado += Time.deltaTime;
+
+            if (tiempoPresionado >= tiempoParaSaltar)
+            {
+                SaltarCinematica();
+            }
+        }
+        else
+        {
+            tiempoPresionado = 0f;
+        }
     }
 
     void SaltarCinematica()
