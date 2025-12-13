@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   director: {fileID: 3128565500232893174}
   teclaParaSaltar: 32
+  UI: {fileID: 0}
   delayParaMostrarMensaje: 1.2
   mensajeSkip: {fileID: 4572433603316792480}
 --- !u!1 &4572433603316792480
@@ -236,7 +237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Presiona espacio para quitar la cinem\xE1tica"
+  m_text: "Presiona \"E\" para quitar la cinem\xE1tica"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 206e45466460888478148795576dced2, type: 2}
   m_sharedMaterial: {fileID: -4513436057513031445, guid: 206e45466460888478148795576dced2, type: 2}

@@ -18,6 +18,7 @@ public class ControlCollares : MonoBehaviour
     [Header("UI")]
     public Image iconoCollar;
     public TextMeshProUGUI contadorUI;
+    public Canvas canvasUI;
 
     public AudioSource sonidoCollar;
 
@@ -100,7 +101,7 @@ public class ControlCollares : MonoBehaviour
 
     void IntentarUsarCollar()
     {
-        if (!cargado || recargando)
+        if (!cargado || recargando || !canvasUI.enabled)
         {
             Debug.Log("❌ Collar no está listo");
             return;
