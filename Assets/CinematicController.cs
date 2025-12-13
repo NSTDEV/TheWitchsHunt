@@ -21,8 +21,6 @@ public class CinematicController : MonoBehaviour
     public float tiempoParaSaltar = 2.0f;
 
     float tiempoPresionado = 0f;
-    bool presionando = false;
-
 
     void Start()
     {
