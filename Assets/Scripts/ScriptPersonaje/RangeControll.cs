@@ -6,12 +6,21 @@ using UnityEngine.Rendering.Universal;
 [RequireComponent(typeof(Collider2D))]
 public class RangeControll : MonoBehaviour
 {
-    // ==========================================
-    //   SISTEMA DE RANGO PARA ENEMIGOS (COLLAR)
-    // ==========================================
+    [Header("Audio - Latido del corazón")]
+    public AudioSource heartAudio;
 
-    public static RangeControll instance; // acceso global al rango del jugador
+    public float minVolume = 0.2f;
+    public float maxVolume = 0.8f;
+    public float aceleracionLatido = 0.15f;
+    float latidoProgreso = 0f;
 
+    [Header("Latido por ritmo")]
+    public float latidoMinInterval = 1.2f;
+    public float latidoMaxInterval = 0.35f;
+
+    float latidoTimer = 0f;
+
+    public static RangeControll instance;
     private List<GameObject> enemigosEnRango = new List<GameObject>();
 
     public bool HayEnemigos()
@@ -25,10 +34,6 @@ public class RangeControll : MonoBehaviour
             return enemigosEnRango[0];
         return null;
     }
-
-    // ==========================================
-    //   POST PROCESO
-    // ==========================================
 
     [Header("Post-proceso (Grain)")]
     public Volume globalVolume;
@@ -46,13 +51,9 @@ public class RangeControll : MonoBehaviour
     [Header("DEBUG")]
     public Collider2D triggerCollider;
 
-    // ==========================================
-    //   INIT
-    // ==========================================
-
     void Awake()
     {
-        instance = this; // guardar instancia global del rango
+        instance = this;
     }
 
     void Reset()
@@ -89,11 +90,9 @@ public class RangeControll : MonoBehaviour
                 Time.deltaTime * smoothSpeed
             );
         }
-    }
 
-    // ==========================================
-    //   TRIGGER
-    // ==========================================
+        ActualizarLatido();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -131,4 +130,35 @@ public class RangeControll : MonoBehaviour
             }
         }
     }
+
+    void ActualizarLatido()
+    {
+        if (heartAudio == null) return;
+
+        if (enemigosEnRango.Count == 0)
+        {
+            latidoTimer = 0f;
+            latidoProgreso = 0f;
+
+            if (heartAudio.isPlaying)
+                heartAudio.Stop();
+
+            return;
+        }
+
+        latidoProgreso += Time.deltaTime * aceleracionLatido;
+        latidoProgreso = Mathf.Clamp01(latidoProgreso);
+
+        float intervalo = Mathf.Lerp(latidoMinInterval, latidoMaxInterval, latidoProgreso);
+        heartAudio.volume = Mathf.Lerp(minVolume, maxVolume, latidoProgreso);
+        latidoTimer += Time.deltaTime;
+
+        if (latidoTimer >= intervalo)
+        {
+            heartAudio.Stop();
+            heartAudio.Play();
+            latidoTimer = 0f;
+        }
+    }
+
 }
