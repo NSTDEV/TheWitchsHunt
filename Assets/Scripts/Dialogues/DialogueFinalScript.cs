@@ -23,7 +23,6 @@ public class DialogueFinalScript : MonoBehaviour
         audioSource.clip = playerVoice;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isPlayerInRange && Input.GetButtonDown("Fire1"))

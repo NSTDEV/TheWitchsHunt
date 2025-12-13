@@ -45,21 +45,9 @@ public class NotasManager : MonoBehaviour
 
     void Update()
     {
-        if (!notaAbierta) return;
-
-        if (Input.GetMouseButtonDown(0))
+        if (notaAbierta && Input.GetMouseButtonDown(0))
         {
             CerrarNota();
-        }
-
-        // --- CELULAR ---
-        if (Input.touchCount > 0)
-        {
-            Touch t = Input.GetTouch(0);
-            if (t.phase == TouchPhase.Began)
-            {
-                CerrarNota();
-            }
         }
     }
 

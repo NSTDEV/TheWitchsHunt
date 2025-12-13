@@ -145,7 +145,7 @@ PrefabInstance:
       value: "\u201CRuido en la colina\u201D\r\nHoy escuch\xE9 gritos en la direcci\xF3n
         de las minas\u2026\r\nLos hombres del turno de noche regresaron antes, riendo
         y bebiendo\u2026\r\nFinjo no ir esos ruidos\u2026\r\nNo debo salir cuando
-        es de noche.\n\nPresiona Espacio para salir\r\n"
+        es de noche.\n\nClick izquierdo para salir"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -399,6 +399,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1235037987090457694, guid: a084f525b78814943a959d5f6599986f, type: 3}
   m_PrefabInstance: {fileID: 1651662225}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &367196422 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 723489768023909719, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+  m_PrefabInstance: {fileID: 9026516126300803672}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &386464094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -416,7 +421,7 @@ PrefabInstance:
       value: "\u201CLa enfermedad\u201D\r\nEl ni\xF1o lleva d\xEDas con fiebre.\r\nLos
         doctores del pueblo no suben hasta aqu\xED.\r\nLe humedezco la frente con
         trapos fr\xEDos, pero no mejora.\r\nLa madre reza. El padre ya no viene de
-        la mina.\r\n\n\nPresiona Espacio para salir\r\n"
+        la mina.\r\n\n\n\nClick izquierdo para salir"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -920,7 +925,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 668832837}
+    m_TransformParent: {fileID: 367196422}
     m_Modifications:
     - target: {fileID: 6757572547057003330, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_Name
@@ -960,15 +965,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574111504692857532, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -591.12
+      value: -0.24956042
       objectReference: {fileID: 0}
     - target: {fileID: 8574111504692857532, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -85.01
+      value: 8.272711
       objectReference: {fileID: 0}
     - target: {fileID: 8574111504692857532, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.9838308
+      value: 0.1157049
       objectReference: {fileID: 0}
     - target: {fileID: 8574111504692857532, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1474,9 +1479,6 @@ Transform:
   m_Children:
   - {fileID: 504102526}
   - {fileID: 842855978}
-  - {fileID: 595259464}
-  - {fileID: 1332855397}
-  - {fileID: 522383983}
   - {fileID: 973204069}
   - {fileID: 527137402}
   - {fileID: 351735189}
@@ -1510,7 +1512,7 @@ PrefabInstance:
       value: "\u201CEl dibujo\u201D\r\nTom\xE1s me regal\xF3 un papel con dos figuras
         tomadas de la mano.\r\n\u201CEres mi amiga\u201D, escribi\xF3 con su letra
         torpe.\r\nLo guard\xE9 entre mis ropas, para no olvidar que todav\xEDa hay
-        bondad en esta casa.\r\n\n\nPresiona Espacio para salir\r\n"
+        bondad en esta casa.\r\n\n\nClick izquierdo para salir"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -1934,6 +1936,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 653b93a475d1c40418aeb3089bac4664, type: 3}
+--- !u!1 &834518825 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4534915789900483532, guid: 39ed85433feec714ebb0abcc920be2e5, type: 3}
+  m_PrefabInstance: {fileID: 6351900915977710664}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &842855978 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2620497295957099266, guid: cc28ae40965326242be0971b40dd9c76, type: 3}
@@ -2007,7 +2014,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 668832837}
+    m_TransformParent: {fileID: 367196422}
     m_Modifications:
     - target: {fileID: 6757572547057003330, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_Name
@@ -2035,15 +2042,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574111504692857532, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -591.12
+      value: -0.24956042
       objectReference: {fileID: 0}
     - target: {fileID: 8574111504692857532, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -101.8
+      value: -8.51729
       objectReference: {fileID: 0}
     - target: {fileID: 8574111504692857532, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.9838308
+      value: 0.1157049
       objectReference: {fileID: 0}
     - target: {fileID: 8574111504692857532, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2178,22 +2185,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4229902271240048522, guid: 25f610676a786da42a657d627aee5d87, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6656595865785057862, guid: 25f610676a786da42a657d627aee5d87, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1825909642}
-    - target: {fileID: 7338861147900432654, guid: 25f610676a786da42a657d627aee5d87, type: 3}
-      propertyPath: bottonPause
-      value: 
-      objectReference: {fileID: 968765990}
-    - target: {fileID: 7823435910463687329, guid: 25f610676a786da42a657d627aee5d87, type: 3}
-      propertyPath: m_Color.a
-      value: 0.8156863
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2203,11 +2198,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6794220138809073045, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
   m_PrefabInstance: {fileID: 1901337505}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &968765990 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8222711271660434980, guid: 25f610676a786da42a657d627aee5d87, type: 3}
-  m_PrefabInstance: {fileID: 955380191}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &973204069 stripped
 Transform:
@@ -12156,7 +12146,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d1559c797b5c2cd4988f0d0c2c762007, type: 3}
     - target: {fileID: 1645816780489345873, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 7.363272
+      value: 7.004481
       objectReference: {fileID: 0}
     - target: {fileID: 2115892377229748715, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: necklaceSound
@@ -66054,7 +66044,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 668832837}
+    m_TransformParent: {fileID: 367196422}
     m_Modifications:
     - target: {fileID: 6757572547057003330, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_Name
@@ -66094,15 +66084,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574111504692857532, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -591.12
+      value: -0.24956042
       objectReference: {fileID: 0}
     - target: {fileID: 8574111504692857532, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -86.07
+      value: 7.2127132
       objectReference: {fileID: 0}
     - target: {fileID: 8574111504692857532, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.9838308
+      value: 0.1157049
       objectReference: {fileID: 0}
     - target: {fileID: 8574111504692857532, guid: 031b325940afffd4ca7fe174657e5990, type: 3}
       propertyPath: m_LocalRotation.w
@@ -66416,7 +66406,8 @@ PrefabInstance:
       value: "\u201CRutina\u201D\r\nLas ma\xF1anas son largas. Lavo la ropa, barro,
         y llevo le\xF1a a la casa.\r\nPero no se compara a la rutina del se\xF1or,
         sale temprano y llega tarde de las minas, con las botas cubiertas de polvo
-        negro.\r\nNo me quejo. Es trabajo, y tengo que acostumbrarme.\r\n"
+        negro.\r\nNo me quejo. Es trabajo, y tengo que acostumbrarme.\n\n\nClick
+        izquierdo para salir\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -66757,7 +66748,7 @@ PrefabInstance:
       value: "\u201CAquel ni\xF1o\u201D\r\nTomi me espera todas las tardes para que
         le lea un cuento.\r\nDice que le gusta mi voz, que le recuerda al viento
         entre los \xE1rboles.\r\nNo s\xE9 por qu\xE9, pero cuando sonr\xEDe, la casa
-        parece menos vac\xEDa.\r\n\n\nPresiona Espacio para salir"
+        parece menos vac\xEDa.\r\n\n\nClick izquierdo para salir"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -67082,10 +67073,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personaje
       objectReference: {fileID: 0}
-    - target: {fileID: 4268479298940593161, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 1901337506}
     - target: {fileID: 5255660133590125735, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
       propertyPath: m_Radius
       value: 3
@@ -67155,17 +67142,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
---- !u!114 &1901337506 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3409503902626458474, guid: 6a756d043e4c4bc4e9eab77212ef8377, type: 3}
-  m_PrefabInstance: {fileID: 1901337505}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1908391266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67396,7 +67372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2077661145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67411,8 +67387,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7091189528346747668, guid: d7321ec0f9d3a0e4b988c45d6a51c7a6, type: 3}
   spawnPoint: {fileID: 2077661147}
-  spawnMinInterval: 38
-  spawnMaxInterval: 40
+  spawnMinInterval: 18
+  spawnMaxInterval: 25
   detectionRadius: 1
   poolSize: 1
 --- !u!114 &2077661146
@@ -67742,7 +67718,7 @@ PrefabInstance:
         La se\xF1ora parece fr\xE1gil, y el peque\xF1o llamado Tomi no se separa
         de su cuaderno de dibujos.\r\nLa caba\xF1a es fr\xEDa, pero el aire del bosque
         me resulta m\xE1s amable que el de la ciudad. Creo que aqu\xED podr\xE9 quedarme
-        un buen tiempo, empezar de nuevo...\n\nPresiona Espacio para salir\n\r\n"
+        un buen tiempo, empezar de nuevo...\n\nClick izquierdo para salir\n\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 5374551432333275401, guid: 3684dd7207e9286409e644d363742450, type: 3}
       propertyPath: m_LocalScale.x
@@ -68088,6 +68064,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 4534915789900483532, guid: 39ed85433feec714ebb0abcc920be2e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7608211957869218957, guid: 39ed85433feec714ebb0abcc920be2e5, type: 3}
+      propertyPath: distanciaMax
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7608211957869218957, guid: 39ed85433feec714ebb0abcc920be2e5, type: 3}
+      propertyPath: collaresActuales
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7608211957869218957, guid: 39ed85433feec714ebb0abcc920be2e5, type: 3}
+      propertyPath: enemigoLayer.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -68142,6 +68134,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+      propertyPath: m_WrapMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+      propertyPath: m_SceneBindings.Array.data[6].key
+      value: 
+      objectReference: {fileID: 2792867316687668860, guid: d69c79e393360f448ad9e281c7a9ecda, type: 2}
+    - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+      propertyPath: m_SceneBindings.Array.data[7].key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
       objectReference: {fileID: 444110894}
@@ -68156,7 +68164,15 @@ PrefabInstance:
     - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
       propertyPath: m_SceneBindings.Array.data[6].value
       value: 
-      objectReference: {fileID: 2077661144}
+      objectReference: {fileID: 614088707}
+    - target: {fileID: 3128565500232893174, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+      propertyPath: m_SceneBindings.Array.data[7].value
+      value: 
+      objectReference: {fileID: 834518825}
+    - target: {fileID: 3896586027729551538, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 834518825}
     - target: {fileID: 4242298975326176799, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
       propertyPath: m_Pitch
       value: -0.06
@@ -68191,7 +68207,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 723489768023909719, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 595259464}
+    - targetCorrespondingSourceObject: {fileID: 723489768023909719, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1332855397}
+    - targetCorrespondingSourceObject: {fileID: 723489768023909719, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 522383983}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5694525043920525356, guid: cb89ff5d2ea77e84d857cf9e82c2f20c, type: 3}
       insertIndex: -1

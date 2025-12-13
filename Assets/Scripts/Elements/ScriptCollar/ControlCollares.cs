@@ -10,12 +10,15 @@ public class ControlCollares : MonoBehaviour
 
     [Header("Sistema de carga")]
     public bool cargado = true;
-    public float tiempoRecarga = 10f;
+    public float minTiempo = 20f;
+    public float maxTiempo = 25f;
+    private float tiempoRecarga = 10f;
     private bool recargando = false;
 
     [Header("UI")]
     public Image iconoCollar;
     public TextMeshProUGUI contadorUI;
+    public Canvas canvasUI;
 
     public AudioSource sonidoCollar;
 
@@ -86,17 +89,19 @@ public class ControlCollares : MonoBehaviour
             contadorUI.gameObject.SetActive(true);
     }
 
-    // ❌ YA NO USAMOS TECLADO
-    // void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.Space))
-    //         IntentarUsarCollar();
-    // }
-
-    // ✔ MÉTODO PÚBLICO PARA QUE LO USE EL BOTÓN DEL EDITOR
-    public void IntentarUsarCollar()
+    void Update()
     {
-        if (!cargado || recargando)
+        if (Time.timeScale != 1) {return;}
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            IntentarUsarCollar();
+        }
+    }
+
+    void IntentarUsarCollar()
+    {
+        if (!cargado || recargando || !canvasUI.enabled)
         {
             Debug.Log("❌ Collar no está listo");
             return;
@@ -108,6 +113,8 @@ public class ControlCollares : MonoBehaviour
     void DispararCollar()
     {
         cargado = false;
+
+        tiempoRecarga = Random.Range(minTiempo, maxTiempo);
 
         if (sonidoCollar != null)
             sonidoCollar.Play();
