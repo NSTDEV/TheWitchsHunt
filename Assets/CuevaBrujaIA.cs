@@ -60,7 +60,7 @@ public class CuevaBrujaIA : MonoBehaviour
         agent.SetDestination(target.position);
         agent.speed = witchSpeed;
 
-        // --- Animaciones ---
+        // --- Animaciones
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             animator.SetBool("EnemigoMoviendoLado", true);
