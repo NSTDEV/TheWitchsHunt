@@ -54,12 +54,15 @@ public class Pause : MonoBehaviour
     {
         juegoPausado = false;
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        ControlLlaves.instance.llavesActuales = 0;
+        Destroy(ControlLlaves.instance.gameObject);
+        Destroy(ControlCollares.instance.gameObject);
+        SceneManager.LoadScene("Bosque");
     }
 
     public void VolverMenu(string nombre)
     {
+        Destroy(ControlLlaves.instance.gameObject);
+        Destroy(ControlCollares.instance.gameObject);
         SceneManager.LoadScene(nombre);
     }
 

@@ -24,7 +24,7 @@ public class MovPersonaje : MonoBehaviour
 
     void Update()
     {
-        if (isDead) return;
+        if (isDead || Time.timeScale != 1) return;
 
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
@@ -152,6 +152,8 @@ public class MovPersonaje : MonoBehaviour
         animator.SetBool("QuietoArriba", false);
         animator.SetTrigger("Muerte");
 
+        Destroy(ControlLlaves.instance.gameObject);
+        Destroy(ControlCollares.instance.gameObject);
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("EscenaLose");
     }
