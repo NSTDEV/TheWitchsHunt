@@ -10993,7 +10993,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d1559c797b5c2cd4988f0d0c2c762007, type: 3}
     - target: {fileID: 1645816780489345873, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 7.493802
+      value: 7.839412
       objectReference: {fileID: 0}
     - target: {fileID: 2115892377229748715, guid: 6b5d5694f6ea43e45ac10e745600b220, type: 3}
       propertyPath: necklaceSound
@@ -174189,6 +174189,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1002551043348283681, guid: ab38452f36e35444da69b62747f92c08, type: 3}
+      propertyPath: volumenMaximo
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3181049448596030957, guid: ab38452f36e35444da69b62747f92c08, type: 3}
       propertyPath: m_Name
       value: "ControlMusicaPersecuci\xF3n"
