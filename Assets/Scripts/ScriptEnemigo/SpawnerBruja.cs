@@ -36,7 +36,7 @@ public class SpawnerBruja2 : MonoBehaviour
 
     IEnumerator IniciarSpawner()
     {
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(45f);
 
         while (true)
         {
