@@ -41,38 +41,25 @@ public class CinematicController : MonoBehaviour
             mensajeSkip.SetActive(true);
     }
 
-    void Update()
+void Update()
+{
+    if (!puedeSaltar || Time.timeScale != 1) return;
+
+    // Detecta tanto la tecla 'E' como el toque/click sostenido
+    if (Input.GetKey(teclaParaSaltar) || Input.GetMouseButton(0))
     {
-        if (!puedeSaltar || Time.timeScale != 1) return;
+        tiempoPresionado += Time.deltaTime;
 
-        bool inputActivo = false;
-        if (Input.GetKey(teclaParaSaltar))
-            inputActivo = true;
-
-        if (Input.touchCount > 0)
+        if (tiempoPresionado >= tiempoParaSaltar)
         {
-            Touch t = Input.GetTouch(0);
-            if (t.phase == TouchPhase.Began || t.phase == TouchPhase.Stationary)
-                inputActivo = true;
-
-            if (t.phase == TouchPhase.Ended || t.phase == TouchPhase.Canceled)
-                inputActivo = false;
-        }
-
-        if (inputActivo)
-        {
-            tiempoPresionado += Time.deltaTime;
-
-            if (tiempoPresionado >= tiempoParaSaltar)
-            {
-                SaltarCinematica();
-            }
-        }
-        else
-        {
-            tiempoPresionado = 0f;
+            SaltarCinematica();
         }
     }
+    else
+    {
+        tiempoPresionado = 0f;
+    }
+}
 
     void SaltarCinematica()
     {

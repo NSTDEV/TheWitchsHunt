@@ -6,7 +6,7 @@ public class SonidoPersecucion : MonoBehaviour
 {
      [Header("Configuración de audio")]
     public AudioSource musicaPersecucion; // 2D, Loop ON, PlayOnAwake OFF
-    public float volumenMaximo = 1f;
+    public float volumenMaximo = 0.7f;
     public float fadeSpeed = 1.5f;
 
     [Header("Tag del enemigo")]

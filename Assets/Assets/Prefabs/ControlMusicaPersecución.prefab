@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicaPersecucion: {fileID: 3247671235220859308}
-  volumenMaximo: 1
+  volumenMaximo: 0.7
   fadeSpeed: 1.5
   enemyTag: Enemigo
 --- !u!82 &3247671235220859308
